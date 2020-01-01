@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "STUDY"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "STUDY"
@@ -108,9 +108,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "STUDY"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "언젠가 다 뜯어 고치고 ."
+  bio              : "-열심히-"
   location         : "Somewhere"
   email            :
   links:
