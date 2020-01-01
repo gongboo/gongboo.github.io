@@ -20,8 +20,8 @@ locale                   : "en-US"
 title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "STUDY"
+description              : "학습 기록"
 url                      : # the base hostname & protocol for your site e.g. "https://gongboo.github.io"
 baseurl                  : ""
 repository               : "mmistakes/minimal-mistakes"
@@ -110,7 +110,7 @@ analytics:
 author:
   name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "언젠가 다 뜯어 고치고 ."
   location         : "Somewhere"
   email            :
   links:
