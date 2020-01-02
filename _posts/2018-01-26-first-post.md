@@ -16,8 +16,17 @@ def print_hi(name):
 print_hi('Tom')
 ```
 
+
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+
+
+
+후기
+'''이거 뭔가 해서 삽질했다
+작은 따옴표인줄 알고 완전 삽질하고 있었는데
+~이거 쉬프트 없이였다
