@@ -2,8 +2,8 @@ title: study
 description: My Personal Blog
 author: J.Y
 logo: /hcz-jekyll-blog/static/img/avatar.png
-github: https://github.com/codeasashu
-about: Freelance developer
+github:  
+about:  
 
 baseurl: ""
 url: "https://gongboo.github.io/"
@@ -26,3 +26,11 @@ per_page: 20
 paginate_path: "/page:num/"
 markdown: kramdown
 gems: [jekyll-paginate, jekyll-gist]
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
