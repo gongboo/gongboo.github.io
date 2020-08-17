@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 source 'https://rubygems.org'
 
 group :jekyll_plugins do
@@ -8,3 +9,7 @@ group :jekyll_plugins do
   gem 'kramdown'
   gem 'rouge'
 end
+=======
+source "https://rubygems.org"
+gemspec
+>>>>>>> parent of 7548d24... 스킨 변경
