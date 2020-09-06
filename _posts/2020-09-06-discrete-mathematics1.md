@@ -31,7 +31,7 @@ identity law : 결과 동일한 경우
 complement law: 
 idempotent law: 멱등성: 아무리 계산해도 같음:
 bound law, absorption law, involution law, 0/1 law, 
-de morgan's law: 드 모르간 법칙: $(A \bigcup B)\overline=A\overline \bigcap b\overline$
+de morgan's law: 드 모르간 법칙: $\overline{(A \bigcup B)} = \overline{A} \bigcap \overline{B}$
 
 partition: 분할 
 cartesian product: 곱집합
