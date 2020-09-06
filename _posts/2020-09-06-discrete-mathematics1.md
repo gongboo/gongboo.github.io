@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "discrete_mathematics-1"
-date:   2020-09-06 
+date:   2020-09-06 13:35:39
 categories: discrete_mathematics
 use_math: true
 ---
