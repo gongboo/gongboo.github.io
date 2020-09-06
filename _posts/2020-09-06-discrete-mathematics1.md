@@ -21,7 +21,7 @@ $P(x)$: powerset of x: 모든 subset의 집합: 멱집합
 교집합(intersection), 합집합(union), 차집합(difference)
 pairwise disjoint: 서로소: disjoint 하다: 공통부분이 없다
 $U$:universal set
-$X\overline$
+$\overline{X}$
 
 집합 관련 규칙들
 associative law: 결합 법칙
