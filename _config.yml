@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "J.Y.L"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Every little helps"
+  bio              : "필기 + 메모 + 기록"
   location         : "Seoul"
   email            :
   links:
@@ -275,7 +275,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: # true
       comments: # true
       share: true
       related: true
