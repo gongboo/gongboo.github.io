@@ -51,5 +51,32 @@ $F \to T$이면 vacuously true(가설이 이미 틀리므로)
 문장으로 구분하는거
 if p then q = p only if q = when p q
 
-necessary condition(필요조건): 조건 충족하면 결론 충족. 조건 충족 못하면 결론 충족 못함   
-sufficient condition(충분조건): 조건 충족하면 
+necessary condition(필요 조건): 조건 충족하면 결론 충족. 조건 충족 못하면 결론 충족 못함 잠깐만 아직 이해 못함   
+sufficient condition(충분 조건): 조건 충족하면 결론 보장. 조건 충족 못하면 
+biconditional proposition(필요 충분)
+
+tautology: 모든 경우가 TRUE   
+contradiction(모순): 모든 경우가 FALSE   
+logically equivalent: 진위표가 같음   
+converse: 역    
+contrapositive: 대우. 진위표가 완전히 같아서 증명할 때 사용한다.   
+
+**deductive reasoning(연역법)**: 대전제에서 결론을 얻음. top-down logic. 새로운 지식을 만들지 않음.    
+**inductive reasoning(귀납법)**: 일반화로 결론을 얻음   
+argument(추론?): hypothesis로 conclusion을 구하는 것   
+valid argument는 hypothesis가 true고 conclusion도 true   
+
+hypothetical syllogism rule of inference(삼단논법): $p \to q, q \to r$ 이면 $p \to r$
+
+ppt25 참고
+
+
+quantifiers(수량사): 
+- universial quantifiers: for every x $\blwa x$: 모든 값이 그렇다   
+- existentially quantifier: there exist x: 적어도 하나 있다
+de morgan's law를 적용가능하다   
+설명 추가하기
+- nested quantifier: quantifier 중복해서 쓸수 있다. 순서가 중요   
+AxEy
+
+chapter1 끝
