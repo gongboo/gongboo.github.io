@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "computer_architechure-1"
+date:   2020-09-08 
+categories: computer-architechure
+use_math: true
+---
+
+
+앞부분은 정리가 좀 안됨...
+
+levels of program code   
+
+components of computer   
+
+abstraction and isa   
+
+## performance
+Moore's law: 
+
+response time(latency, execution time): 일 하나 하는데 얼마나 걸리나   
+throughput: 단위시간 동안 얼마나 일하냐   
+
+reponse time   
+$Performance_X = 1/Execution_X$   
+X가 Y보다 n배 빠르다: $Performance_X / Performance_Y =Execution_Y/Execution_X$   
+
+execution time은 어떻게 재나   
+elapsed time: 모든 response time   
+CPU time: CPU가 일한 시간
+- user cpu time: 내 프로그램 안에서 실행된 시간
+- system cpu time   
+real = user+system????
+
+
+cpu clocking: 시간단위로 디지털 단위로 이루어짐   
+- clock frequency(clock rate): 초당 clock 수   
+- clock period: 한 clock당 시간   
+
+performance는 execution time으로 정해진다   
+
+**cpu time**= cpu clock cycle $\mult$ clock cycle time = ${cpu clock cycle} / {clock rate}$   
+average CPI: 한 instruction에 필요한 clock cycle 수: Clock cycle Per Instruction의 평균   
+instruction마다 필요한 cycle의 수가 다르다.   
+
+CPU performance는 cpu time의 역   
+cpu time= (clock cycles)$\mult$(clock cycle time)   
+=(instruction count) $\mult$ CPI $\mult$ (clock cycle time)   
+=${(instruction count)\mult CPI}/{(clock rate)}$   
