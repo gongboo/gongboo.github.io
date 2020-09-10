@@ -41,3 +41,15 @@ cartesian product: 곱집합
 
 ## logic(논리)   
 correct reasoning   
+proposition(명제): 참이나 거짓으로 판명할 수 있는 문장   
+compound proposition(복합 명제): connectives(연결사)로 연결된 명제   
+표 ppt13,14참고   
+truth table(진위표)로 표로 나타낸다   
+conditional proposition(조건명제): if p then q: $p \to q $    
+p는 hypthesis(가설) q는 conclusion(결론)
+$F \to T$이면 vacuously true(가설이 이미 틀리므로)   
+문장으로 구분하는거
+if p then q = p only if q = when p q
+
+necessary condition(필요조건): 조건 충족하면 결론 충족. 조건 충족 못하면 결론 충족 못함   
+sufficient condition(충분조건): 조건 충족하면 

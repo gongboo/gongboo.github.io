@@ -39,11 +39,17 @@ cpu clocking: 시간단위로 디지털 단위로 이루어짐
 
 performance는 execution time으로 정해진다   
 
-**cpu time**= cpu clock cycle $\mult$ clock cycle time = ${cpu clock cycle} / {clock rate}$   
+**cpu time**= cpu clock cycle $\times$ clock cycle time = ${cpu clock cycle} / {clock rate}$   
 average CPI: 한 instruction에 필요한 clock cycle 수: Clock cycle Per Instruction의 평균   
 instruction마다 필요한 cycle의 수가 다르다.   
 
 CPU performance는 cpu time의 역   
-cpu time= (clock cycles)$\mult$(clock cycle time)   
-=(instruction count) $\mult$ CPI $\mult$ (clock cycle time)   
-=${(instruction count)\mult CPI}/{(clock rate)}$   
+cpu time= (clock cycles)$\times$(clock cycle time)   
+=(instruction count) $\times$ CPI $\times$ (clock cycle time)   
+=${(instruction count)\times CPI}/{(clock rate)}$   
+**IC, CPI, clock rate**가 다 있어야 performance 구할 수 있다.   
+
+
+
+## power
+power  1/2 /times capacitive load /times voltage^2 frequency
