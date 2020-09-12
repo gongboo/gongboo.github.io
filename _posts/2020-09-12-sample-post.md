@@ -5,7 +5,7 @@ date:   2020-09-12
 categories: sample
 use_math: true
 ---
-<script src="mermaid.full.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
 
 
