@@ -5,13 +5,14 @@ date:   2020-09-12
 categories: sample
 use_math: true
 ---
+<script src="mermaid.full.min.js"></script>
 
 
 
-
-```mermaid
-pie title Pets adopted by volunteers
-  "Dogs" : 386
-  "Cats" : 85
-  "Rats" : 35
-```
+    ```mermaid
+        graph TD;
+            A-->B;
+            A-->C;
+            B-->D;
+            C-->D;
+    ```
