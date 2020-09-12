@@ -5,10 +5,7 @@ date:   2020-09-12
 categories: sample
 use_math: true
 ---
- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
-
-
+이건 지금 작동이 안됨   
 ```mermaid
   graph TD;
     A-->B;
