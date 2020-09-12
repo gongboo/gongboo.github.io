@@ -53,3 +53,11 @@ cpu time= (clock cycles)$\times$(clock cycle time)
 
 ## power
 power  1/2 /times capacitive load /times voltage^2 frequency
+
+
+SPEC(standard performance evaluation corp) Benchmark: performance를 측정하기 위한 프로그램   
+Amdahl's law: 컴의 일부를 향상시키고 그만큼 성능향상이 이루어기를 바라는 오류   
+$T_improved =T_affected/(improvement factor)+T_unaffected$   
+그러므로 최대한 줄이려면 큰 부분에 집중해야겠죠?   
+
+low power at idle
