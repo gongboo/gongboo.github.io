@@ -9,7 +9,7 @@ use_math: true
 
 
 
-```mermaid!
+```mermaid
   graph TD;
     A-->B;
     A-->C;
