@@ -9,11 +9,9 @@ use_math: true
 
 
 
-{% mermaid %}
-graph LR
-    A --> B
-    B --> C
-    C --> D
-    D -->|AccessKey| C
-    D --> A
-{% endmermaid %}
+```mermaid!
+pie title Pets adopted by volunteers
+  "Dogs" : 386
+  "Cats" : 85
+  "Rats" : 35
+```
