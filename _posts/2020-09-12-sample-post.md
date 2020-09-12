@@ -4,6 +4,7 @@ title:  "sample"
 date:   2020-09-12 
 categories: sample
 use_math: true
+use_mermaid: true
 ---
 이건 지금 작동이 안됨   
 ```mermaid
