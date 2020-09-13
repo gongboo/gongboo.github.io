@@ -67,7 +67,8 @@ $2^{10}$은 Kilo: "K"
 - **diminished radix complement of N**: (r-1)'s complemnt for radix(base) r: (r^n-1)-N   
 - **radix complement of N**: r's complemnt for radix(base) r: r^n-N   
 복잡해보여도 이진수일 때 편하게 계산할 수 있다   
+
 이진수 1's complement는 모든 수 반전   
 이진수 2's complement는 1's complement(모든 수 반전)에 1을 더한 수   
-- 빨리 구하는 팁: 가장 작은 1까지는 남겨놓고 앞에 자리수들만 반전시킨다   
+빨리 구하는 팁: 가장 작은 1까지는 남겨놓고 앞에 자리수들만 반전시킨다   
 1010101100이면    뒷자리 1까지 남기고 1010101`100`   앞에만 반전 0101010`100`   

@@ -5,25 +5,27 @@ date:   2020-09-06 13:35:39
 categories: discrete_mathematics
 use_math: true
 ---
-# set and logic
+# chapter1: set and logic
 
 ## set(집합)
-객체의 모임
-$Z$: 정수(integer) 집합   
-$Z^-$:음의 정수  $Z^{nonneg}$:음수 아닌 정수   
-$Q$: 유리수(rational number) 집합   
-$R$: 실수(real number)집합   
+객체의 모임   
+**$Z$**: 정수(integer) 집합   
+**$Z^-$**:음의 정수  $Z^{nonneg}$:음수 아닌 정수   
+**$Q$**: 유리수(rational number) 집합   
+**$R$**: 실수(real number)집합   
 
-$|X|$:cardinality of X(집합의 크기)(집합의 원소의 개수)   
+**$|X|$**:cardinality of X(집합의 크기)(집합의 원소의 개수)   
 그리고 집합 포함관계는 알아서 보기: =, 부분집합(subset), 진부분집합(proper subset: 부분집합인데 같지는 않음)   
-$P(x)$: powerset of x: 모든 subset의 집합: 멱집합   
+**$P(x)$**: powerset of x: 모든 subset의 집합: 멱집합   
 
 교집합(intersection), 합집합(union), 차집합(difference)   
 pairwise disjoint: 서로소: disjoint 하다: 공통부분이 없다   
 $U$:universal set   
-$\overline{X}$   
+$\overline{X}$: complement of X(여집합)   
+*왜 교재가 $X^c$라고 안하지?*
 
-집합 관련 규칙들
+집합 관련 규칙들    
+*너무 많아서 ppt8쪽 참고하기*
 associative law: 결합 법칙   
 commuative law: 교환 법칙   
 distributive law: 분배 법칙   
@@ -35,15 +37,15 @@ de morgan's law: 드 모르간 법칙: $\overline{(A \bigcup B)} = \overline{A} 
 
 partition: 분할    
 cartesian product: 곱집합
-    순서가 있다
-    $X \times Y$는 모든 $(x,y)$ 순서쌍 집합   
+- 순서가 있다   
+- $X \times Y$는 모든 $(x,y)$ 순서쌍 집합   
 
 
 ## logic(논리)   
 correct reasoning   
-proposition(명제): 참이나 거짓으로 판명할 수 있는 문장   
+**proposition(명제)**: 참이나 거짓으로 판명할 수 있는 문장   
 compound proposition(복합 명제): connectives(연결사)로 연결된 명제   
-표 ppt13,14참고   
+*표 ppt13,14참고*   
 truth table(진위표)로 표로 나타낸다   
 conditional proposition(조건명제): if p then q: $p \to q $    
 p는 hypthesis(가설) q는 conclusion(결론)
@@ -68,15 +70,32 @@ valid argument는 hypothesis가 true고 conclusion도 true
 
 hypothetical syllogism rule of inference(삼단논법): $p \to q, q \to r$ 이면 $p \to r$
 
-ppt25 참고
+truth table(진위표) 종합정리
+\bigwedge: conjunction: AND
+\bigvee: disjunction: OR
+\bigotimes: XOR: exclusive disjunction: 배타적 OR
+\neg: negation
+\to: implication
+\leftrightarrow: double implication
+
+| p | q | $p \bigwedge q$ | $p \bigvee q$ | $p \bigotimes q$ | $\neg p$ | $p \to q$ |
+|---|---|-----------------|---------------|------------------|----------|-----------|
+| T | T | T               | T             | F                | F        | T         |
+| T | F | F               | T             | T                |          | F         |
+| F | T | F               | T             | T                | T        | T         |
+| F | F | F               | F             | F                |          | T         |
+
+*추론 관련은 ppt25 참고하기*
 
 
 quantifiers(수량사): 
-- universial quantifiers: for every x $\blwa x$: 모든 값이 그렇다   
-- existentially quantifier: there exist x: 적어도 하나 있다
-de morgan's law를 적용가능하다   
-설명 추가하기
-- nested quantifier: quantifier 중복해서 쓸수 있다. 순서가 중요   
-AxEy
+- **universial quantifiers**:$\forall x$: for every x: 모든 값이 그렇다   
+- **existential quantifier**: $\exists$: there exist x: 적어도 하나 있다
+de morgan's law를 적용가능하다. 기호바뀌고 조건에 아니다가 붙는다. ppt33,34참고   
+
+**nested quantifier**: quantifier 중복해서 쓸수 있다. 순서에 따라 의미가 바뀌므로 주의.   
+ppt38,39 참고
+
+
 
 chapter1 끝
