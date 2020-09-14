@@ -8,21 +8,21 @@ use_mermaid: true
 ---
 # Chapter1: computer abstraction and technology
 컴퓨터 종류: 개인 컴퓨터, 서버, 슈퍼컴퓨터, 임베디드 컴퓨터   
-|   |
-|----------------------|
+
 | application software: highlevel language로 쓰임 |
 |----------------------|
 | system software: compiler, operating system(OS)      |
 |----------------------|
 | hardware: processor, memory, I/O controllers             |
 
-levels of program code   
+**levels of program code**   
 <div class="mermaid">
     graph TD
         A[high level language<br>고급언어: 생산성과 휴대성 강화] -->|compile| B[assembly language<br>instruction을 text로 나타냄]
         B -->|assemble| C[machine language<br>01로 표현된 instruction과 data]
 </div>   
 
+여기까지 함....
 components of computer   
 
 abstraction and isa   
