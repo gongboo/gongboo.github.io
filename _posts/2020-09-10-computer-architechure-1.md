@@ -11,9 +11,8 @@ categories: computer-architechure
 
 | application software |
 |----------------------|
-| system software
-- compiler
-- operating system(OS)      |
+| system software      |
+|----------------------|
 | hardware             |
 
 levels of program code   
