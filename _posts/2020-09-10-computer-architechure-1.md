@@ -3,11 +3,18 @@ layout: post
 title:  "computer_architechure-1"
 date:   2020-09-08 08:26:28 -0400
 categories: computer-architechure
-use_math: true
+# use_math: true
+#use_mermaid: true
 ---
+# Chapter1: computer abstraction and technology
+컴퓨터 종류: 개인 컴퓨터, 서버, 슈퍼컴퓨터, 임베디드 컴퓨터   
 
-
-앞부분은 정리가 좀 안됨...
+| application software |
+|----------------------|
+| system software
+- compiler
+- operating system(OS)      |
+| hardware             |
 
 levels of program code   
 
@@ -16,7 +23,7 @@ components of computer
 abstraction and isa   
 
 ## performance
-Moore's law: 
+Moore's law: IC capacity가 18-24개월마다 두배로 발전한다.
 
 response time(latency, execution time): 일 하나 하는데 얼마나 걸리나   
 throughput: 단위시간 동안 얼마나 일하냐   
