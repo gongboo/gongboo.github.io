@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title:  "computer_architechure-1"
 date:   2020-09-08 08:26:28 -0400
 categories: computer-architechure
@@ -8,7 +8,7 @@ use_mermaid: true
 ---
 # Chapter1: computer abstraction and technology
 컴퓨터 종류: 개인 컴퓨터, 서버, 슈퍼컴퓨터, 임베디드 컴퓨터   
-
+|   |
 |----------------------|
 | application software: highlevel language로 쓰임 |
 |----------------------|
@@ -19,8 +19,8 @@ use_mermaid: true
 levels of program code   
 <div class="mermaid">
     graph TD
-        A[high level language(고급언어)<br>생산성과 휴대성 강화] -->|compile| B[assembly language]
-        B -->|assemble| C[machine language]
+        A[high level language<br>고급언어: 생산성과 휴대성 강화] -->|compile| B[assembly language<br>instruction을 text로 나타냄]
+        B -->|assemble| C[machine language<br>01로 표현된 instruction과 data]
 </div>   
 
 components of computer   
