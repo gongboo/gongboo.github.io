@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "computer_architechure-1"
-date:   2020-09-08 
+date:   2020-09-08 08:26:28 -0400
 categories: computer-architechure
 use_math: true
 ---
