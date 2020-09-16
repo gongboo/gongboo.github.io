@@ -23,7 +23,7 @@ abstraction(추상화): 데이터 베이스가 너무 복잡하기 때문에 사
 
 
 data model(데이터 모델): 데이터 베이스 표현 방식   
-- relational model: 표를 사용해서 표현
+- relational model: 표를 사용해서 표현   
 여러가지 많다~~~~~필기 나중에   
 
 **data abstraction**   
@@ -41,4 +41,6 @@ schemas: 표 위에 항목이름...이라 보면 됨. 관점 차이로 나뉜다
 **physical data independence**: physical schema를 바꿔도 logical schema에 변동없음   
 
 **data definition language(DDL)**: 
-**data manipulation language(DML)**:
+**data manipulation language(DML)**: 
+
+**SQL Query Language**: 
