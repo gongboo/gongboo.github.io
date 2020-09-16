@@ -16,7 +16,8 @@ relation schema:
 key: 테이블에서 column이라 보면 됨   
 - **composite key(합성키)**: n개의 column이 key를 이룬다
 - **superkey**: 고유 식별성을 가진다
-- **candidate key(후보키)**: superkey가 고유 식별성을 가질 수 있는 최소 column만 있을 때
+- **candidate key(후보키)**: superkey가 고유 식별성을 가질 수 있는 최소 column만 있을 때   
+
 - **primary key(기본키)**: 후보키들 중에서 하나 정함
 - **foreign key(외래키)**: 여러 테이블들의 참조 관계를 나타냄. 두 테이블 간에 겹치는 거. 
 참조하는 쪽에서는 외래키이고 참조 당하는 쪽에서는 기본키다.   
