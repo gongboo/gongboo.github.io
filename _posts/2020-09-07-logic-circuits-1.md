@@ -3,10 +3,10 @@ layout: post
 title:  "logic_circuits-1"
 date:   2020-09-07 13:35:39
 categories: logic_circuits
-
+use_math: true
 ---
-
-# 디지털과 아날로그
+# Chapter1: binary systems
+## 디지털과 아날로그
 **아날로그**: 연속적인 값을 가진다   
 
 **디지털**: 이산적인 값을 가진다   
@@ -31,7 +31,7 @@ least significant digit(LSD): 최소 자리수
 $2^{10}$은 Kilo: "K"   
 그 뒤로 MGTPEZY...   
 
-# n진수 변환하기
+## n진수 변환하기
 *decimal(십진수) system*   
 *binary(이진수) system*   
 *0~15까지 2 8 10 16 진수들은 빨리 변환하게 외워두는 것도 좋다 ppt32쪽*   
@@ -45,7 +45,7 @@ $2^{10}$은 Kilo: "K"
 *검산할 때는 자릿수만큼 n승으로 그냥 계산하기...*  
 
 
-## 기타 변환법(더 빠르게 변환하기)
+**기타 변환법(더 빠르게 변환하기)**   
 **이진수를 팔진수로** 변환하려면 3비트를 묶어서 변환   
 **이진수를 십육진수로** 변환하려면 4비트를 묶어서 변환하면 된다!   
 
@@ -57,15 +57,15 @@ $2^{10}$은 Kilo: "K"
 
 # binary arithmetic(이진 연산)
 **carry(올림수)**: 아래나 위로 올림   
-*책에서는 아래에서 올라온 carry를 Z로 표시하고 위에 올리는 carry를 C로 표현해 준다*
+*책에서는 아래에서 올라온 carry를 Z로 표시하고 위에 올리는 carry를 C로 표현해 준다*   
 **borrow(빌림수)**: 빼기 같은거 할 때 위에서 빌려오는 거   
-*책에서는 아래에서 내리는 borrow를 Z로 표시하고 위에 내리는 borrow를 B로 표현해 준다*
+*책에서는 아래에서 내리는 borrow를 Z로 표시하고 위에 내리는 borrow를 B로 표현해 준다*   
 
-**음수 표현하기**
+**음수 표현하기**   
 - **signed-magnitude**: 첫 비트가 1이면 음수   
 음수를 표현할 때는 보통 complement(보수)를 쓴다   
-- **diminished radix complement of N**: (r-1)'s complemnt for radix(base) r: (r^n-1)-N   
-- **radix complement of N**: r's complemnt for radix(base) r: r^n-N   
+- **diminished radix complement of N**: (r-1)'s complemnt for radix(base) r: ($r^n$-1)-N   
+- **radix complement of N**: r's complemnt for radix(base) r: $r^n$-N   
 복잡해보여도 이진수일 때 편하게 계산할 수 있다   
 
 이진수 1's complement는 모든 수 반전   
@@ -73,9 +73,30 @@ $2^{10}$은 Kilo: "K"
 빨리 구하는 팁: 가장 작은 1까지는 남겨놓고 앞에 자리수들만 반전시킨다   
 1010101100이면    뒷자리 1까지 남기고 1010101`100`   앞에만 반전 0101010`100`   
 
-뺄셈 계산하기
-M-N 대신 M-(2^n-N)을 계산하면   
-- M>N이면 M-N이 나오고
-- M<=N이면 나온 값의 N의 complement에 - 한 것이 답이다.   
+**뺄셈 계산하기**   
+**2의 보수 뺄셈 계산하기**: M-N 대신 M+($2^n$-N)을 계산하면   
+- M >= N이면 M-N이 나오고($2^n$이 없어지므로)   
+- M < N이면 나온 값의 N의 complement하고 음수처리한 것이 M-N이다.($2^n$-(M-N)이므로)   
+ - 예시 2's complement   
 ppt60-61 참고   
 
+**diminished radix complement/1의 보수로 뺄셈 계산하기**: M-N 대신 M+($2^n$-1-N)을 계산하면   
+- M >= N이면 M+($2^n$-1-N)+1이 답이고   
+- M < N이면 나온 값 그대로 M+($2^n$-1-N)의 1의 보수 후 음수처리가 답이다.   
+
+
+binary conversion: 숫자를 이진 숫자로 변환 하는 것   
+**binary coding**: 어떤 데이터를 이진 코드로 바꾸는 것   
+conversion과 coding이 다름을 유의: 위에서 한 진수 바꾸기는 conversion, 아래서 할 변환은 coding이라 한다   
+non-numeric binary codes   
+M개의 원소로 binary code로 바꿀때는 $\lceil n=log_2{M}\rceil$개(로그하고 올림)의 비트가 필요하다   
+
+binary code for decimal digits ppt68 알아두고 다른것도 할 줄 알아야함   
+
+**binary coded decimal(BCD)**: 8421 코드이다. 10개만 센다.   
+**ASCII character code**: American Standard Code for Information Interchange의 줄임말. 7 bits로 이루어짐. non-printing character 34개(백스페이스 flow control character STX ETX들)와 graphic printing character(그냥 문자) 포함   
+아스키 몇번에 뭐들었는지 알아야 하나?   
+**UNICODE**: 모든언어 다 표현 65,536   
+channel coding:error-detection code   
+- parity: 1bit를 오류 찾는데 쓴다: 한자 오류는 모두 찾으며 여러 에러도 몇개 걸러냄
+그 한 bit를 짝수로 맞추면 even parity 홀수로 맞추면 odd parity. ppt75 참고   
