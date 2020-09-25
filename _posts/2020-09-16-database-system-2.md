@@ -3,7 +3,7 @@ layout: post
 title:  "database_system-2"
 date:   2020-09-16 13:35:39 -400
 categories: database_system
-use_mermaid: true
+#use_mermaid: true
 ---
 
 # Chapter2
@@ -32,4 +32,14 @@ relation의 수학적 정의
 cartesian product(곱집합): 순서가 있는 요소 모임   
 relation은 각각의 항목의 cartesial product로 표현된다   
 
+foreign key constraint(외래키 제약)   
+referential integrity constraint(참조 무결성 제약)  알아두라는데?   
 
+relational algebra(관계 대수): 한두개의 관계를 input으로 받아서 다른 관계를 output으로 내는 연산자
+- select
+- project
+
+
+- join: cartesian 곱 해서 필요없는 거 거름
+
+relational algebra expression(관계 대수식): 관계 대수로 식 씀.   
