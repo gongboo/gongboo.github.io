@@ -279,3 +279,6 @@ defaults:
       comments: # true
       share: true
       related: true
+      
+      use_math: true
+      show_date: true
