@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "database_system-mySQL"
 date:   2020-09-16 13:35:39 -400
 categories: database_system
