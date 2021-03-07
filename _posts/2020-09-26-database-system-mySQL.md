@@ -20,11 +20,11 @@ create table classroom(     --classroom 테이블을 생성한다
 
 data type은 [여기][SQL_datatype] 참고   
 
-```SQL
+{% highlight SQL %}
 insert into classroom value ('Watson','100',50); --행 삽입 
 select * from classroom; --모든 데이터가 선택되며 선택된 데이터 출력. * 값에는 항목이 들어올 수 있다
 select * from classroom where capacity<100; --조건부 데이터 선택
-```
+{% endhighlight %}
 
 일단 배운데까지 완료
 
