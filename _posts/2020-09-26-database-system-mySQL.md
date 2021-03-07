@@ -9,14 +9,15 @@ categories: database_system
 SQL(Structured Query Language): 데이터 베이스를 접근, 조작한다.   
 [SQL문법은 여기서 볼 수 있습니다.][SQL_site]
 
-```SQL
+{% highlight SQL %}
 create table classroom(     --classroom 테이블을 생성한다
     building    varchar(15),
     room_number varchar(7),
     capacity    numeric(4,0),
     primary key (building, room_number)
 );
-```
+{% endhighlight %}
+
 data type은 [여기][SQL_datatype] 참고   
 
 ```SQL
