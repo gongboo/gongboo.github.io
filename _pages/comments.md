@@ -1,7 +1,7 @@
 ---
 title: "Comments"
 permalink: /comments/
-layout: posts
+layout: single
 author_profile: true
 comments: true
 ---
