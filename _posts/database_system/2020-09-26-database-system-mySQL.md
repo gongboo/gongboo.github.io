@@ -1,7 +1,7 @@
 ---
 title:  "database_system-mySQL"
 date:   2020-09-16 13:35:39 -400
-categories: database_system
+# categories: database_system
 ---
 
 # SQL 문법과 코드   

@@ -3,6 +3,7 @@ layout: post
 title:  "discrete_mathematics-1"
 date:   2020-09-06 13:35:39
 categories: discrete_mathematics
+tags: discrete_mathematics set
 use_math: true
 ---
 # chapter1: set and logic
