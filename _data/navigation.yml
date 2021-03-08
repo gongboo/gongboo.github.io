@@ -2,6 +2,8 @@
 main:
   - title: "tags"
     url: /tags/
+  - title: "categories"
+    url: /categories/
   - title: "comments"
     url: /comments/
   # - title: "Quick-Start Guide"

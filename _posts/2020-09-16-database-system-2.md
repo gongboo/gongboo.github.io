@@ -2,7 +2,7 @@
 # layout: post
 title:  "database_system-2"
 date:   2020-09-16 13:35:39 -400
-# categories: database_system
+categories: database_system
 #use_mermaid: true
 ---
 
