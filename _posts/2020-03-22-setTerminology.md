@@ -1,0 +1,38 @@
+---
+title:  "집합 기본 용어 정리"
+date: 2020-03-22 13:35:39
+categories: probabiliy&statistics
+tags: probabiliy&statistics set
+---
+
+
+
+1. **set(집합)**은 **elements(원소)**들의 모음이다
+
+2. **size of the set(집합의 크기)**는 원소의 개수
+|S|이런 식으로 표현
+
+3. $x\in S$ :x가 S의 원소이다
+
+4. 집합 S=T이려면 S와 T의 크기가 같고 S의 모든 원소가 T의 원소
+
+5. **subset(부분집합)** $T\subset S$ 이렇게 표시 하며 T의 모든 원소가 S의 원소이다. { }, $\emptyset$ 는 공집합으로 모든 집합의 subset이다
+
+6. 집합을 {xㅣf(x)}와 같이 나타낼 때도 있는데 $f(x)$가 사실인 $x$들의 집합을 뜻한다. 원소가 너무 많거나 무한일 때 사용
+
+7. **universial set($\Omega$)**는 모든 경우의 수의 집합
+예를 들어 주사위의 universial set은 {1,2,3,4,5,6}
+
+8. **power set**은 모든 가능한 부분집합의 집합 $2^S$ 나 $P(S)$로 표시
+
+9. **set complement(여집합 $S^C$)**은 universial set에서 S의 원소를 뺀 집합 $S^c$라고 표시
+
+10. **set union(합집합 $\cup$)**
+
+11. **set intersection(교집합 $\cap$)**
+
+12. **disjoint sets** 여러 집합들이 교집합이 하나도 없으면 mutually disjoint라고 한다. 
+
+13. **partition(분할)** 집합 $S_1,\ldots,S_n$이 mutually disjoint이고 합집합이 S이면 S1,...,Sn은 S의 partition이다
+
+14. 집합은 commutativity(교환),associativity(결합), distributivity(분배) 법칙들이 성립한다.
