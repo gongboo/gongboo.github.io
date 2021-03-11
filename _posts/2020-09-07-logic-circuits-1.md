@@ -3,7 +3,8 @@ layout: post
 title:  "logic_circuits-1"
 date:   2020-09-07 13:35:39
 categories: logic_circuits
-use_math: true
+tags: logic_circuits
+# use_math: true
 ---
 # Chapter1: binary systems
 ## 디지털과 아날로그

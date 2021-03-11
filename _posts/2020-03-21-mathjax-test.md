@@ -1,5 +1,6 @@
 ---
 title: "이 블로그는 mathjax를 사용할 수 있습니다."
+categories: blog
 tags: blog
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "formal_language_automata-1"
 date:   2020-09-08 
-categories: formal_language_and_automata
+categories: formal_language&automata
 use_math: true
 ---
 
