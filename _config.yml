@@ -281,7 +281,7 @@ defaults:
       related: true
 
       use_math: true
-      show_date: true
+      show_date: false
   
     # _pages
   - scope:
