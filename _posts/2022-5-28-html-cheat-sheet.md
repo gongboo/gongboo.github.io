@@ -60,7 +60,75 @@ VS code에서 ! 쳐서 자동 완성 하면 아래 같이 나온다
 
 ### a 태그
 ```html
-<a>anchor 입니다</a>
+<a href="#">anchor 입니다</a>
 ```
 
-<a>anchor 입니다.</a>
+<a href="#">anchor 입니다.</a>
+
+
+### 목록 태그 ul ol li
+```html
+    <ul>
+        <li>ul(unordered list)은 순서가 없는 목록</li>
+        <li>li(list item)으로 ul 이나 ol 안에</li>
+        <li>들어간다</li>
+    </ul>
+    <ol type="a"> ol(ordered list) 순서가 있는 목록
+        <li>type으로 아이템 앞에 오는</li>
+        <li> 숫자나 문자를 정할 수 있다</li>
+        <li>1 a A i I 를 속성으로 쓸 수 있다</li> 
+    </ol>
+```
+
+<ul>
+    <li>ul(unordered list)은 순서가 없는 목록</li>
+    <li>li(list item)으로 ul 이나 ol 안에</li>
+    <li>들어간다</li>
+</ul>
+<ol type="a"> ol(ordered list) 순서가 있는 목록
+    <li>type으로 아이템 앞에 오는</li>
+    <li> 숫자나 문자를 정할 수 있다</li>
+    <li>1 a A i I 를 속성으로 쓸 수 있다</li> 
+</ol>
+
+### dl dt dd
+
+
+### table 태그: table th tr td
+```html
+<table>
+    <tr>
+        <th>table 태그에 대해 알아보자</th>
+    </tr>
+    <tr>
+        <th>table</th>
+        <td>th</td>
+        <td>tr</td>
+        <td>td</td>
+    </tr>
+    <tr>
+        <th>table 태그란</th>
+        <td>th 태그는 table head로 표의 제목</td>
+        <td>tr 태그는 table row로 표의 가로줄</td>
+        <td>td는 table data로 각각의 셀</td>
+    </tr>
+</table>
+```
+
+<table>
+    <tr>
+        <th>table 태그에 대해 알아보자</th>
+    </tr>
+    <tr>
+        <th>table</th>
+        <td>th</td>
+        <td>tr</td>
+        <td>td</td>
+    </tr>
+    <tr>
+        <th>table 태그란</th>
+        <td>th 태그는 table head로 표의 제목</td>
+        <td>tr 태그는 table row로 표의 가로줄</td>
+        <td>td는 table data로 각각의 셀</td>
+    </tr>
+</table>
