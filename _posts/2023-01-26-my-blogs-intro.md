@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "my-blogs-intro"
-date:   2023-01-26  
+title: "my-blogs-intro"
+date: 2023-01-26  
 categories: journal
 tags: "journal"
 use_math: false
