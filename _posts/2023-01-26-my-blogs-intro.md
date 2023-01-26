@@ -3,7 +3,7 @@ layout: post
 title:  "my-blogs-intro"
 date:   2023-01-26  
 categories: journal
-tags: "journal", "blog"
+tags: "journal"
 use_math: false
 use_mermaid: false
 ---
