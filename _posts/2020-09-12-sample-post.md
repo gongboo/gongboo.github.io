@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "sample"
-date:   2020-09-12 
+title: "sample"
+date: 2020-09-12 
 categories: sample
 tags: "blog"
 use_math: true
