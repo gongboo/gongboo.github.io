@@ -198,6 +198,14 @@ VS code에서 ! 쳐서 자동 완성 하면 아래 같이 나온다
 
 ### label 태그
 
+###img
+
+```html
+<img src="image.jpg" alt="대체 텍스트 입니다." />
+```
+
+<img src="image.jpg" alt="대체 텍스트 입니다.">
+
 ### 그 외...
 
 글자를 키워주는 big 태그는 html5에서는 적용안됨

@@ -39,3 +39,8 @@ Here is a mermaid diagram:
 `안녕하세요`
 
 ~안녕하세요~
+
+<details>
+  <summary>펼치기 전 내용은 여기에 들어간다.</summary>
+  <p>내부에 넣을 내용은 여기에</p>
+</details>
