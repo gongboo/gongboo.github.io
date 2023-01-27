@@ -357,8 +357,20 @@ input[type="submit"],
 }
 
 
-.img200 {
+.smallImg {
   width: 400px;
+  margin: auto;
+  display: block;
+}
+
+.mediumImg {
+  width: 600px;
+  margin: auto;
+  display: block;
+}
+
+.bigImg {
+  width: 800px;
   margin: auto;
   display: block;
 }
