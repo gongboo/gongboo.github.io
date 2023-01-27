@@ -12,7 +12,7 @@ use_mermaid: false
 
 # git 명령어
 
-![_git 명령어 (1).png](https://blogger.googleusercontent.com/img/a/AVvXsEh-2jYhyu-NZVrlXKTiBTyHXMGaCZlCiJa2u9doe8_uhhqvqgD01doxsWFdFDddMz9qG4YfVglYp91r0CzmSqVeaS1XtYVihiyZRpfPUKNHqH8yGlsZBYRFCtvakXMpdu7FD3rAh6n2JfbpSfJKuVBlOvHkDpfuzFx7c_3c1bkwU9ABO-RMYu5dj5ov5A){: .img200}
+![_git 명령어 (1).png](https://blogger.googleusercontent.com/img/a/AVvXsEh-2jYhyu-NZVrlXKTiBTyHXMGaCZlCiJa2u9doe8_uhhqvqgD01doxsWFdFDddMz9qG4YfVglYp91r0CzmSqVeaS1XtYVihiyZRpfPUKNHqH8yGlsZBYRFCtvakXMpdu7FD3rAh6n2JfbpSfJKuVBlOvHkDpfuzFx7c_3c1bkwU9ABO-RMYu5dj5ov5A){: .800px}
 
 git은 분산 저장소 방식의 버전 관리 시스템으로 지역저장소와 원격 저장소에 함께 저장해서 관리한다.
 
