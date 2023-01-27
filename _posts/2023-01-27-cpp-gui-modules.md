@@ -34,4 +34,4 @@ win32 : 이건 우리 조원이 맥을 써서 패스
 
 dear imGui : 경량형 외부 종속성 X.  크로스플랫폼. 
 
-[dear imgui 관련 블로그 글 링크](https://blog.naver.com/PostView.nhn?blogId=sweetsmell9&logNo=221618574623&parentCategoryNo=&categoryNo=16&viewDate=&isShowPopularPosts=false&from=postView)
+[dear imgui 관련 블로그 글 링크](https://blog.naver.com/PostView.nhn?blogId=sweetsmell9&logNo=221618574623&parentCategoryNo=&categoryNo=16&viewDate=&isShowPopularPosts=false&from=postView){: .img200}
