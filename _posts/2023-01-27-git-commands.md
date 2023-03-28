@@ -2,7 +2,7 @@
 layout: post
 title: "git 명령어 정리"
 date: 2023-01-27  
-categories: journal
+categories: git
 tags: 
     - "git"
 use_math: false

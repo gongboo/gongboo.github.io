@@ -2,9 +2,8 @@
 layout: post
 title: "c++ gui 사용해보려고 여러 모듈 정리해본 글"
 date: 2023-01-27  
-categories: journal
+categories: c++
 tags: 
-    - "journal"
     - "c++"
     - "modules"
 use_math: false
