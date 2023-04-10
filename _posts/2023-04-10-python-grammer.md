@@ -1,3 +1,16 @@
+---
+layout: post
+title: "python 문법 정리"
+date: 2023-04-10
+categories: python
+tags:
+  - "python"
+  - "language"
+  - "grammer"
+use_math: false
+use_mermaid: false
+---
+
 # python
 
 파이썬 문법 까먹을 때 메모한거 모은 것 입니다. 틈 날때마다 계속 추가 수정 중..
