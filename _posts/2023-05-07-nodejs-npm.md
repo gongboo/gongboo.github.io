@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "sample"
-date: 2020-09-12
-categories: sample
-tags: "blog"
-use_math: true
-use_mermaid: true
+title: "node js, npm 설치 실행"
+categories: "nodejs"
+tags:   - "nodejs"
+        - "npm"
+        - "javascript"
+use_math: false
+use_mermaid: false
 ---
 
 # node js, npm 설치 실행
@@ -25,23 +26,14 @@ node를 깔면 npm을 쓸 수가 있다(자동으로 같이 설치됨)
 프로젝트 할 디렉토리로 이동해서 `npm init` 하면 관련해서 정보를 입력하게 뜬다
 
 > Press ^C at any time to quit.
-
 > package name: (node_test_timer)
-
 > version: (1.0.0)
-
 > description:
-
 > entry point: (index.js)
-
 > test command:
-
 > git repository:
-
 > keywords:
-
 > author:
-
 > license: (ISC)
 
 그럼 이런식으로 package.json이 생긴다.
