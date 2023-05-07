@@ -141,6 +141,14 @@ range 보다 enumerate 쓰는걸 파이써닉 하다고 보는듯.
 
 [https://www.daleseo.com/python-enumerate/](https://www.daleseo.com/python-enumerate/)
 
+## 함수
+
+```python
+def returnText(a):
+    text = a+" is the text"
+    return text
+```
+
 ## 기타 함수들
 
 min() max() 최대 최소 찾기
