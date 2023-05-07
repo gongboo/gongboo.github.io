@@ -10,6 +10,8 @@ use_math: false
 use_mermaid: false
 ---
 
+![blogs_image](/assets/images/computer_ghost.png)
+
 이 블로그는 github 블로그로 minimal mistakes 템플릿을 가져와서 일부만 수정해서 사용하고 있습니다.
 
 블로그는 이렇게 관리하고 있습니다.
@@ -20,3 +22,5 @@ use_mermaid: false
 
 - 필기는 간결하게: 길고 자세한 내용은 검색하면 다 있다. 필요 이상으로 너무 자세하게 시간 많이 쓰지 말기
 - 한눈에 보이게: 최대한 표나 도식 같은 걸 사용해서 한번에 처음부터 끝까지 구조를 파악할 수 있게.
+
+근데 깔끔하게 글을 올리려고 하다보니 메모장에 대충 쓴 글들이 너무 많이 쌓여서 그냥 대충 올리기로 했다
