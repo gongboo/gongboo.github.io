@@ -10,7 +10,7 @@ use_math: false
 use_mermaid: false
 ---
 
-![blogs_image](/assets/images/computer_ghost.png)
+![blogs_image](/assets/images/computer_ghost.png){: .smallImg}
 
 이 블로그는 github 블로그로 minimal mistakes 템플릿을 가져와서 일부만 수정해서 사용하고 있습니다.
 
