@@ -2,6 +2,7 @@
 layout: post
 title: "node js, npm 설치 실행"
 categories: "nodejs"
+date: 2023-05-07
 tags:   - "nodejs"
         - "npm"
         - "javascript"
