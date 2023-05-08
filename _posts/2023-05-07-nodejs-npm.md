@@ -111,6 +111,6 @@ vue/cli 자체는 글로벌로 설치 되어 있는데 왜 그런건지 모르�
 
 결과  
 이런 식으로 나온다  
-![pomodoro_electron.png](https://blogger.googleusercontent.com/img/a/AVvXsEgFBBc47LzpEAFao-fddJ-0xIyZrnJ_SnJjCgVtEGsduSRu1q5p5Hau_ykRQU0tkGC7lQRrQxqHtNJtkQLhS64KPWmwZG1HUt_0DKfKsCU3z_wjVeNzbiA9c81gvqh5foMO9UujKU-7g-Vrp_8hDqIR-HFWe_J37s7U2Ht2vq3xhbVsg-CwELM66ihAVA)
+![pomodoro_electron.png](https://blogger.googleusercontent.com/img/a/AVvXsEgFBBc47LzpEAFao-fddJ-0xIyZrnJ_SnJjCgVtEGsduSRu1q5p5Hau_ykRQU0tkGC7lQRrQxqHtNJtkQLhS64KPWmwZG1HUt_0DKfKsCU3z_wjVeNzbiA9c81gvqh5foMO9UujKU-7g-Vrp_8hDqIR-HFWe_J37s7U2Ht2vq3xhbVsg-CwELM66ihAVA){: .smallImg}
 
 electron 뭔가 재밌는데 종종 쓰고 싶다
