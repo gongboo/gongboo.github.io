@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "node js, npm 설치"
+title: "SQL 기본 개념"
 date: 2023-05-07
-categories: "nodejs"
+categories: "sql"
 tags:
   - "sql"
   - "정보처리기사"
