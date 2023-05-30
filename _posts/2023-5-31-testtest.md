@@ -1,3 +1,15 @@
+---
+layout: post
+title: "SQL 기본 개념test"
+date: 2023-05-07
+categories: "test"
+tags:
+  - "sql"
+  - "정보처리기사"
+use_math: false
+use_mermaid: false
+---
+
 {"prompt": "No. Going to a competitive high school was harder and more stressful than all my adult endeavors combined.\n\n###\n\n", "completion": " sadness"}
 {"prompt": "They woke up in the middle of the night to find a stranger standing at the foot of their bed, watching them silently. The fear of an intruder in their own home, the vulnerability of being caught off guard, and the sense of violation filled them with intense fear. The experience tested their ability to stay calm under pressure, forced them to confront their deepest fears, and compelled them to take immediate action to ensure their safety.\n\n###\n\n", "completion": " fear"}
 {"prompt": "Your caring gestures and acts of kindness inspire others to do the same. You have a beautiful way of making the world a better place.\n\n###\n\n", "completion": " caring"}
