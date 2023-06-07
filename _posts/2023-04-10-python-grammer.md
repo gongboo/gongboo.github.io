@@ -202,10 +202,33 @@ pythonic 파이써닉
 
 파이썬 언어의 철학 중 하나로, 파이썬에서 가독성과 코드의 간결함을 중요시하는 프로그래밍 스타일
 
+### 파일 읽기 쓰기
+
+```python
+#원래는 열고 읽고 닫고 하지만
+file = open('파일경로/파일이름', 'r')
+content = file.read()
+print(content)
+file.close()
+
+#with를 쓰면 자동으로 닫아줌
+with open('파일경로/파일이름', 'r') as file:
+    content = file.read()
+    print(content)
+
+
+#쓰는 것도 마찬가지
+file = open('파일경로/파일이름.txt', 'w')
+file.write('파일에 저장할 내용')
+file.close()
+
+with open('파일경로/파일이름', 'w') as file:
+    file.write('내용')
+```
+
 앞으로 더 쓸만한 거
 
 - [ ] 객체지향 프로그래밍의 개념과 클래스, 상속
 - [ ] 예외처리의 개념, try-except
-- [ ] 파일 입출력 이거 할 때 with도 쓰기
 - [ ] 정규표현식
 - [ ] 람다 함수의 개념과 사용법
