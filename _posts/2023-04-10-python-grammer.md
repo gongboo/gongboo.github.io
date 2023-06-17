@@ -226,9 +226,70 @@ with open('파일경로/파일이름', 'w') as file:
     file.write('내용')
 ```
 
+### 클래스
+
+```python
+class MyClass:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+    def method1(self):
+        # 메소드 동작 구현
+        pass
+
+    def method2(self, parameter):
+        # 메소드 동작 구현
+        pass
+
+
+# 이렇게 인스턴스 생성
+obj = MyClass(arg1_value, arg2_value)
+```
+
+init은 인스턴스 초기화
+
+self는 인스턴스 자체이고 모든 메소드에서는 첫번째 인자로 self를 불러야함. 그래야 인스턴스 내부 변수에 접근
+
+### 클래스 상속
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print("The animal speaks")
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        print("Woof!")
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        print("Meow!")
+
+# Animal 클래스의 인스턴스 생성
+animal = Animal("Animal")
+animal.speak()  # 출력: The animal speaks
+
+# Dog 클래스의 인스턴스 생성
+dog = Dog("Dog")
+dog.speak()  # 출력: Woof!
+
+# Cat 클래스의 인스턴스 생성
+cat = Cat("Cat")
+cat.speak()  # 출력: Meow!
+```
+
 앞으로 더 쓸만한 거
 
-- [ ] 객체지향 프로그래밍의 개념과 클래스, 상속
 - [ ] 예외처리의 개념, try-except
 - [ ] 정규표현식
 - [ ] 람다 함수의 개념과 사용법
