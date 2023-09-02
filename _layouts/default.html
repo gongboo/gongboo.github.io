@@ -26,9 +26,14 @@
     {% include_cached masthead.html %}
 
     <div class="initial-content">
-
+      <style>
+        .anchor-icon::before {
+          content: "\1F517"; /* Unicode for the anchor emoji */
+          margin-right: 5px;
+        }
+      </style>
       <br>
-      <div style="color: rgb(82, 82, 82);" id="index">---index---</div>
+      <div style="color: rgb(82, 82, 82);" id="index">-------index-------</div>
 
       {{ content }}
 
@@ -52,12 +57,7 @@
           }
         });
       </script>
-      <style>
-        .anchor-icon::before {
-          content: "\1F517"; /* Unicode for the anchor emoji */
-          margin-right: 5px;
-        }
-      </style>
+
 
     </div>
 
