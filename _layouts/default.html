@@ -39,18 +39,26 @@
 
           for (var i = 0; i < titles.length; i++) {
             var tagName = titles[i].tagName;
-            if (tagName === "H1") {
-              index.innerHTML += "<br> &emsp;-" + titles[i].textContent;
+            titles[i].id=i+"-title";
+            if (tagName === "h1") {
+              index.innerHTML += "<br> &emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
             }
-            else if (tagName === "H2") {
-              index.innerHTML += "<br> &emsp;&emsp;-" + titles[i].textContent;
+            else if (tagName === "h2") {
+              index.innerHTML += "<br> &emsp;&emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
             }
-            else if (tagName === "H3") {
-              index.innerHTML += "<br> &emsp;&emsp;&emsp;-" + titles[i].textContent;
+            else if (tagName === "h3") {
+              index.innerHTML += "<br> &emsp;&emsp;&emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
             }
           }
         });
       </script>
+      <style>
+        .anchor-icon::before {
+          content: "\1F517"; /* Unicode for the anchor emoji */
+          margin-right: 5px;
+        }
+      </style>
+
     </div>
 
     {% if site.search == true %}
