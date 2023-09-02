@@ -46,13 +46,13 @@
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
             if (tagName === "h1") {
-              index.innerHTML += "<br> &emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
+              index.innerHTML += '<br> &emsp;-' + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
             }
             else if (tagName === "h2") {
-              index.innerHTML += "<br> &emsp;&emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
+              index.innerHTML += '<br> &emsp;&emsp;-' + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
             }
             else if (tagName === "h3") {
-              index.innerHTML += "<br> &emsp;&emsp;&emsp;-" + "<a href=#"+i+"-title" +' class="anchor-icon">'+titles[i].textContent+"</a>";
+              index.innerHTML += '<br> &emsp;&emsp;&emsp;-'  + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
             }
           }
         });
