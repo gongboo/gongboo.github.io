@@ -28,7 +28,7 @@
     <div class="initial-content">
 
       <br>
-      <div style="width:20px;color: red;" id="index">1.Title test</div>
+      <div style="color: rgb(82, 82, 82);" id="index">1.Title test</div>
 
       {{ content }}
       <script>
@@ -36,7 +36,7 @@
         var index = document.getElementById("index");
 
         for(var i = 0; i < titles.length; i++) {
-          index.innerHTML+="<br>"+titles[i].textContent;
+          index.innerHTML+="<br> -"+titles[i].textContent;
         }
       </script>
     </div>
