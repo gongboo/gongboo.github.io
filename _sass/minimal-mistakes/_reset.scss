@@ -37,9 +37,13 @@ body { margin: 0; }
   background: #000;
 }
 
+// ::selection {
+//   color: #fff;
+//   background: #000;
+// }
 ::selection {
-  color: #fff;
-  background: #000;
+  color: #000000;
+  background: #ffd311;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
