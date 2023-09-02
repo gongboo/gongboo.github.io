@@ -31,23 +31,7 @@
       <div style="color: rgb(82, 82, 82);" id="index">---index---</div>
 
       {{ content }}
-      <!-- <script>
-        var titles=document.querySelectorAll("h1,h2,h3");
-        var index = document.getElementById("index");
 
-        for(var i = 0; i < titles.length; i++) {
-          var tagName = titles[i].tagName;
-          if (tagName=="h1"){
-            index.innerHTML+="<br> -"+titles[i].textContent;
-          }
-          else if(tagName=="h2"){
-            index.innerHTML+="<br>  -"+titles[i].textContent;
-          }
-          else if(tagName=="h3"){
-            index.innerHTML+="<br>   -"+titles[i].textContent;
-          }
-        }
-      </script> -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
           var titles = document.querySelectorAll("h1,h2,h3");
@@ -56,13 +40,13 @@
           for (var i = 0; i < titles.length; i++) {
             var tagName = titles[i].tagName;
             if (tagName === "H1") {
-              index.innerHTML += "<br> -" + titles[i].textContent;
+              index.innerHTML += "<br> &emsp;-" + titles[i].textContent;
             }
             else if (tagName === "H2") {
-              index.innerHTML += "<br>  -" + titles[i].textContent;
+              index.innerHTML += "<br> &emsp;&emsp;-" + titles[i].textContent;
             }
             else if (tagName === "H3") {
-              index.innerHTML += "<br>   -" + titles[i].textContent;
+              index.innerHTML += "<br> &emsp;&emsp;&emsp;-" + titles[i].textContent;
             }
           }
         });
