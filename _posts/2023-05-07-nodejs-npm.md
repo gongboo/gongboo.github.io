@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "node js, npm 설치"
 date: 2023-05-07
 categories: "nodejs"

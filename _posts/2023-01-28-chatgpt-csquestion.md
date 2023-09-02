@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "학기의 끝나고 chatgpt한테 질문한 것들"
 date: 2023-01-27  
 categories: journal

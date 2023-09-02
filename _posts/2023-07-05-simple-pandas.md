@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "간단한 pandas"
 date: 2023-05-07
 categories: "python"

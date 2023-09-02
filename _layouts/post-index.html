@@ -104,18 +104,20 @@ layout: default
       var index = document.getElementById("index");
 
       for (var i = 0; i < titles.length; i++) {
-        var tagName = titles[i].tagName;
-        titles[i].id=i+"-title";
-        titles[i].classList.add("anchor-icon");
-        if (tagName === "H1") {
-          index.innerHTML += '<br> &emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
-        }
-        else if (tagName === "H2") {
-          index.innerHTML += '<br> &emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
-        }
-        else if (tagName === "H3") {
-          index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
+        if(!element.classList.contains("author__name") || !element.classList.contains("screen-reader-text")){
+            var tagName = titles[i].tagName;
+            titles[i].id=i+"-title";
+            titles[i].classList.add("anchor-icon");
+            if (tagName === "H1") {
+            index.innerHTML += '<br> &emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
+            }
+            else if (tagName === "H2") {
+            index.innerHTML += '<br> &emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
+            }
+            else if (tagName === "H3") {
+            index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
+            }
         }
       }
     });
-  </script>
+</script>

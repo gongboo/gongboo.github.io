@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "python 문법 정리"
 date: 2023-04-10
 categories: python

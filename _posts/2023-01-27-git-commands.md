@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "git 명령어 정리"
 date: 2023-01-27  
 categories: git

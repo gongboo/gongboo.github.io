@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "기술 블로그에 대한 글"
 date: 2023-05-07
 categories: "journal"

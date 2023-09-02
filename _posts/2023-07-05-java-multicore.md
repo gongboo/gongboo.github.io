@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "java multicore"
 date: 2023-07-05
 categories: "multicore"
