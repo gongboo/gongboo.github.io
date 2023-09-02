@@ -104,7 +104,7 @@ layout: default
       var index = document.getElementById("index");
 
       for (var i = 0; i < titles.length; i++) {
-        if(!element.classList.contains("author__name") || !element.classList.contains("screen-reader-text")){
+        if(!element.classList.contains("author__name") && !element.classList.contains("screen-reader-text")){
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
             titles[i].classList.add("anchor-icon");
