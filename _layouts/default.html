@@ -45,14 +45,15 @@
           for (var i = 0; i < titles.length; i++) {
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
+            titles[i].classList.add("anchor-icon");
             if (tagName === "h1") {
-              index.innerHTML += '<br> &emsp;-' + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
+              index.innerHTML += '<br> &emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
             else if (tagName === "h2") {
-              index.innerHTML += '<br> &emsp;&emsp;-' + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
+              index.innerHTML += '<br> &emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
             else if (tagName === "h3") {
-              index.innerHTML += '<br> &emsp;&emsp;&emsp;-'  + '<a href="#'+i+'-title"' +' class="anchor-icon">'+titles[i].textContent+'</a>';
+              index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
           }
         });
