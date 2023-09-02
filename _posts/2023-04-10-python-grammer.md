@@ -51,7 +51,9 @@ a.replace("good","great") #굿을 그레이트로 바꿔줌
 len(a) #문자열 길이
 ```
 
-산술 연산자 :a + b, a - b, a \* b, a \*\* b(거듭제곱 a의 b승), a / b, a // b(나눗셈의 몫), a % b(나눗셈의 나머지)
+## 산술 연산자
+
+a + b, a - b, a \* b, a \*\* b(거듭제곱 a의 b승), a / b, a // b(나눗셈의 몫), a % b(나눗셈의 나머지)
 
 ## 자료형
 
@@ -95,7 +97,7 @@ dictionary
 
 ![Frame 5.png](https://blogger.googleusercontent.com/img/a/AVvXsEiONORxtZVgEyqZ628qWo8eyyM1BGsyY1S_-IH89NloDNwaW05V6dN-4jdUTQEEsRyKBFJDYSw8rwNr1QCDVyYjWm9V0cn1vuCau1B_Xee_fSPdAwVycgz9b_KU03405Tn5K4vRjsBV6kegKDOVWFsStNE3BJEK2XRxlugm7_04D8rCAQft5V9-sLV9dA)
 
-리스트 관련 메소드
+**리스트 관련 메소드**
 
 pop(위치) : 위치의 요소를 출력 후 삭제. 인수 없으면 그냥 맨뒤에서 출력 후 삭제
 
@@ -111,7 +113,7 @@ sort(): 오름차순으로 정렬.12345 reverse=True를 인자로 넣으면 내�
 
 copy(): 리스트 복사
 
-set 관련 메소드
+**set 관련 메소드**
 
 pop : 인수 못넣고 무조건 맨뒤에거 출력후 삭제
 
@@ -128,7 +130,7 @@ remove(값): 값을 찾아서 삭제
 for i in range (5):
 	print(i)
 
-# 두개도 가능
+# iterable을 enumerate해서 인덱스와 내용을 가져올 수 있다
 for i, letter in enumerate(['A', 'B', 'C']):
 	print(i, letter)
 
