@@ -14,12 +14,7 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<style>
-    .anchor-icon::after {
-      content: "\1F517"; /* Unicode for the anchor emoji */
-      margin-right: 5px;
-    }
-</style>
+
 <div style="color: rgb(82, 82, 82);" id="index">index</div>
 
 <div id="main" role="main">
@@ -107,7 +102,7 @@ layout: default
         if(!titles[i].classList.contains("author__name") && !titles[i].classList.contains("screen-reader-text")){
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
-            titles[i].classList.add("anchor-icon");
+            // titles[i].classList.add("anchor-icon");
             if (tagName === "H1") {
             index.innerHTML += '<br> &emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
