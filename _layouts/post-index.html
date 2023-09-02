@@ -99,7 +99,7 @@ layout: default
       var index = document.getElementById("index");
 
       for (var i = 0; i < titles.length; i++) {
-        if(!titles[i].classList.contains("author__name") && !titles[i].classList.contains("screen-reader-text")){
+        if(!titles[i].classList.contains("archive__item-title") && !titles[i].classList.contains("author__name") && !titles[i].classList.contains("screen-reader-text")){
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
             // titles[i].classList.add("anchor-icon");
