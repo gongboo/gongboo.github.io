@@ -26,10 +26,19 @@
     {% include_cached masthead.html %}
 
     <div class="initial-content">
-      <div style="width:20px;color: red;">1.Title test</div>
 
       <br>
+      <div style="width:20px;color: red;" id="index">1.Title test</div>
+
       {{ content }}
+      <script>
+        var titles=document.querySelectorAll("h1,h2,h3");
+        var index = document.getElementById("index");
+
+        for(var i = 0; i < titles.length; i++) {
+          index.innerHTML+="<br>"+titles[i].textContent;
+        }
+      </script>
     </div>
 
     {% if site.search == true %}
