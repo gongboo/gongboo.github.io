@@ -27,7 +27,7 @@
 
     <div class="initial-content">
       <style>
-        .anchor-icon::before {
+        .anchor-icon::after {
           content: "\1F517"; /* Unicode for the anchor emoji */
           margin-right: 5px;
         }
@@ -46,13 +46,13 @@
             var tagName = titles[i].tagName;
             titles[i].id=i+"-title";
             titles[i].classList.add("anchor-icon");
-            if (tagName === "h1") {
+            if (tagName === "H1") {
               index.innerHTML += '<br> &emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
-            else if (tagName === "h2") {
+            else if (tagName === "H2") {
               index.innerHTML += '<br> &emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
-            else if (tagName === "h3") {
+            else if (tagName === "H3") {
               index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a href="#'+i+'-title">'+titles[i].textContent+'</a>';
             }
           }
