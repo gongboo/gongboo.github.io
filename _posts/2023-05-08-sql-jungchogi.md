@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-index
 title: "SQL 기본 개념"
 date: 2023-05-07
 categories: "sql"
