@@ -36,7 +36,16 @@
         var index = document.getElementById("index");
 
         for(var i = 0; i < titles.length; i++) {
-          index.innerHTML+="<br> -"+titles[i].textContent;
+          var tagName = titles[i].tagName;
+          if (tagName=="h1"){
+            index.innerHTML+="<br> -"+titles[i].textContent;
+          }
+          else if(tagName=="h2"){
+            index.innerHTML+="<br>  -"+titles[i].textContent;
+          }
+          else if(tagName=="h3"){
+            index.innerHTML+="<br>   -"+titles[i].textContent;
+          }
         }
       </script>
     </div>
