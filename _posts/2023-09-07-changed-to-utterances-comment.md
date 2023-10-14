@@ -1,3 +1,14 @@
+---
+layout: post
+title: "블로그 댓글 utterances로 수정했다."
+categories: journal
+tags:
+  - "journal"
+  - "blog"
+use_math: false
+use_mermaid: false
+---
+
 # 블로그 댓글 utterances로 수정했다.
 
 원래 disqus를 썼는데 언젠가부터 광고가 너무 과해지기 시작했다.
