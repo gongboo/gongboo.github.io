@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "블로그 댓글 utterances로 수정했다."
+layout: post-index
+title: "구글 블로그 blogger(blogspot)에 마크다운 적용하기"
 categories: journal
 tags:
   - "journal"
