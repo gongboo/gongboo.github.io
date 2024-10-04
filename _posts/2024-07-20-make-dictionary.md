@@ -2,7 +2,7 @@
 layout: post
 title: "side project: 영한 사전 제작기"
 date: 2023-01-26
-categories: journal
+categories: "project"
 tags:
   - "project"
   - "side-project"

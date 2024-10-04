@@ -2,7 +2,7 @@
 layout: post
 title: "side project: 뜨개질 배색 도안 사이트"
 date: 2023-01-26
-categories: journal
+categories: "project"
 tags:
   - "project"
   - "side-project"
