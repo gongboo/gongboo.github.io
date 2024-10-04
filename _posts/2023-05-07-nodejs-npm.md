@@ -13,7 +13,7 @@ use_math: false
 use_mermaid: false
 ---
 
-# node js, npm 설치 실행
+## node js, npm 설치 실행
 
 node js는 브라우저 외에서도 javascript를 사용할 수 있게 해주는 건데
 

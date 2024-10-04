@@ -1,22 +1,19 @@
 ---
 layout: post-index
 title: "git 명령어 정리"
-date: 2023-01-27  
+date: 2023-01-27
 categories: git
-tags: 
-    - "git"
+tags:
+  - "git"
 use_math: false
 use_mermaid: false
 ---
-
-
-# git 명령어
 
 ![_git 명령어 (1).png](https://blogger.googleusercontent.com/img/a/AVvXsEh-2jYhyu-NZVrlXKTiBTyHXMGaCZlCiJa2u9doe8_uhhqvqgD01doxsWFdFDddMz9qG4YfVglYp91r0CzmSqVeaS1XtYVihiyZRpfPUKNHqH8yGlsZBYRFCtvakXMpdu7FD3rAh6n2JfbpSfJKuVBlOvHkDpfuzFx7c_3c1bkwU9ABO-RMYu5dj5ov5A){: .bigImg}
 
 git은 분산 저장소 방식의 버전 관리 시스템으로 지역저장소와 원격 저장소에 함께 저장해서 관리한다.
 
-원격 저장소는 주로 github. gitlab이라는 서비스도 있다. 
+원격 저장소는 주로 github. gitlab이라는 서비스도 있다.
 
 `git init`
 

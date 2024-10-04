@@ -9,8 +9,6 @@ use_math: false
 use_mermaid: false
 ---
 
-# 블로그 목차 만들기
-
 블로그 목차가 필요해서 h1 h2 h3를 목차로 상단에 표시해주도록 했다
 
 ```html
@@ -68,3 +66,5 @@ h1 h2 h3 골라서 목차에 넣어줌
 h1 h2 h3 마다 들여쓰기(`&emsp;`)를 다르게 함.
 
 tagName은 html에서 대문자로 반환함을 주의하기
+
+미래의 나에게 : 이거 코드는 post-index.html 쪽에 들어가 있음.

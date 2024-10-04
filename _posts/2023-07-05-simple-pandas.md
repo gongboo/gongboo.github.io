@@ -10,8 +10,6 @@ use_math: false
 use_mermaid: false
 ---
 
-# 간단한 pandas
-
 Pandas는 Python에서 데이터 다룰 때 쓰는 라이브러리
 
 slr파서 구현하는데 LR테이블을 엑셀 표보고 하드 코딩하는게 너무 노가다라서 판다스로 하는데 좀 까먹어서 정리함

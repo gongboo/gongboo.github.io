@@ -9,8 +9,6 @@ use_math: false
 use_mermaid: false
 ---
 
-# 블로그 댓글 utterances로 수정했다.
-
 원래 disqus를 썼는데 언젠가부터 광고가 너무 과해지기 시작했다.
 
 ![1](https://blogger.googleusercontent.com/img/a/AVvXsEhBw7o07LTigeV7tEdwN0xa4AGA6ghdOQLlycbXDNRMbycmgCay1NWDquka4cecGu0mDq-2TpOfJX4yVXUFfIyVdPql9oDNf9A3ahXn0QmdGg3R6_s7p5sDfhw2Sj7u1SneCgI1vHSQUxR-1PA5L4PCk1ZYhVQKkEBnqaAyHUmCROyrqRdGR1JtClrJbGqP){: .smallImg}

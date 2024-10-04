@@ -10,8 +10,6 @@ use_math: false
 use_mermaid: false
 ---
 
-# java multicore
-
 ## Thread와 Runnable
 
 Java에서 쓰레드를 만드는 방법은 두 가지

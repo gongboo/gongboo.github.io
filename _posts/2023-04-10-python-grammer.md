@@ -143,6 +143,8 @@ range 보다 enumerate 쓰는걸 파이써닉 하다고 보는듯.
 
 [https://www.daleseo.com/python-enumerate/](https://www.daleseo.com/python-enumerate/)
 
+///if 문 while 문
+
 ## 함수
 
 ```python

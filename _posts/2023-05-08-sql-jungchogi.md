@@ -10,7 +10,7 @@ use_math: false
 use_mermaid: false
 ---
 
-# 정처기 SQL
+## 정처기 SQL
 
 # SQL
 
