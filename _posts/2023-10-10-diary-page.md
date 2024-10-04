@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "custom diary page 제작"
+title: "side project: custom diary page 제작"
 date: 2023-01-26
 categories: journal
 tags:

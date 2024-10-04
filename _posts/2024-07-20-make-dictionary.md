@@ -13,4 +13,4 @@ use_mermaid: false
 
 ## 여기 접속해서 사용 가능
 
-https://dictionary-interface-react.pages.dev/
+[영한 사전 웹페이지 링크](https://dictionary-interface-react.pages.dev/)
