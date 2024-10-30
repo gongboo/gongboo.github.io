@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: post-index
 title: "side project: 뜨개질 도안 문서 편집기 사이트"
 date: 2024-10-27
-categories: journal
+categories: project
 tags:
   - project
   - side-project
@@ -74,4 +74,8 @@ prose mirror기반으로 만들어진 wrapper인 tiptap 라이브러리가 있�
 
 폰트를 직접 만들어서 사용했다. figma로 뜨개질 기호를 그리고 fontello를 활용해서 폰트로 변환했다.
 
-## utf 폰트 자유영역.
+## utf 폰트 자유영역 설정하기
+
+## 폰트 figma로 제작시 주의점
+
+빈공간 주의
