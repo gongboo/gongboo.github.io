@@ -31,7 +31,6 @@ layout: default
     <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
     {% if page.last_modified_at %}
     <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-    <div style="color: rgb(82, 82, 82);text-decoration: none;" id="index">index</div>
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
@@ -41,6 +40,7 @@ layout: default
         {% include post__meta.html %}
       </header>
       {% endunless %}
+      <div style="color: rgb(82, 82, 82);text-decoration: none;" id="index">index</div>
 
       <section class="page__content" itemprop="text">
         {% if page.toc %}
