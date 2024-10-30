@@ -19,7 +19,6 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
-  <div style="color: rgb(82, 82, 82);text-decoration: none;" id="index">index</div>
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}
@@ -32,6 +31,7 @@ layout: default
     <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
     {% if page.last_modified_at %}
     <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+    <div style="color: rgb(82, 82, 82);text-decoration: none;" id="index">index</div>
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
@@ -118,13 +118,13 @@ layout: default
         titles[i].id = i + "-title";
         // titles[i].classList.add("anchor-icon");
         if (tagName === "H1") {
-          index.innerHTML += '<br> &emsp; -' + '<a href="#' + i + '-title">' + titles[i].textContent + '</a>';
+          index.innerHTML += '<br> &emsp; -' + '<a style="text-decoration: none;" href="#' + i + '-title">' + titles[i].textContent + '</a>';
         }
         else if (tagName === "H2") {
-          index.innerHTML += '<br> &emsp;&emsp; -' + '<a href="#' + i + '-title">' + titles[i].textContent + '</a>';
+          index.innerHTML += '<br> &emsp;&emsp; -' + '<a style="text-decoration: none;" href="#' + i + '-title">' + titles[i].textContent + '</a>';
         }
         else if (tagName === "H3") {
-          index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a href="#' + i + '-title">' + titles[i].textContent + '</a>';
+          index.innerHTML += '<br> &emsp;&emsp;&emsp; -' + '<a style="text-decoration: none;" href="#' + i + '-title">' + titles[i].textContent + '</a>';
         }
       }
     }
