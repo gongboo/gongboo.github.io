@@ -12,4 +12,4 @@ use_mermaid: false
 
 뜨개질 배색 도안 사이트를 만들었다
 
-[knitshare.link](knitshare.link) 로 들어가 접속할 수 있다
+[https://knitshare.link](https://knitshare.link) 로 들어가 접속할 수 있다

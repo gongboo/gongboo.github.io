@@ -20,8 +20,13 @@ use_mermaid: false
 내용을 요약하자면..
 
 1. **</head> 앞에 이거 추가**
-
 <link rel="stylesheet" href="[//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css](notion://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css)"/>
+
+```
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css"/>
+
+```
 
 1. **</html> 앞에 이거 추가**
 
@@ -29,6 +34,13 @@ use_mermaid: false
 <script src='[//cdnjs.cloudflare.com/ajax/libs/showdown/1.6.2/showdown.min.js](notion://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.2/showdown.min.js)' type='text/javascript'></script>
 <script src='[//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js](notion://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js)' type='text/javascript'></script>
 <script src='[//mxp22.surge.sh/markdown-highlight-in-blogger.js](notion://mxp22.surge.sh/markdown-highlight-in-blogger.js)' type='text/javascript'></script>
+
+```
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/showdown/1.6.2/showdown.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="//mxp22.surge.sh/markdown-highlight-in-blogger.js" type="text/javascript"></script>
+```
 
 ### 이제 pre로 감싸진 부분에 마크다운이 적용된다.
 
@@ -81,3 +93,59 @@ html도 그냥 작성해도 된다.
 마크다운 기본이라 하이라이트가 안된다. 하려면 `<span style="background-color: #fcff01;"></span>`을 쓰면 되는데 딱히 좋아보이지는 않는다
 
 이거 블로거에 적용하는 부분 코드를 살펴봤는데 길지 않아서 커스텀 하려면 할 수 있을 것 같은데 나중으로 미뤄둔다.
+
+### 수정
+
+mxp22.surge.sh/markdown-highlight-in-blogger.js
+이부분이 작동을 안해서 내 블로그에 마크다운이 이상하게 돌아가는 것을 알게 되었다.
+서버가 내려간 것 같았다.
+저거 개발자는 이제 업데이트도 없고 별로 신경을 안쓰는 듯하여
+내용 살펴보니 짧아서 통으로 가져와서 그냥 내 블로그에 붙이기로 했다.
+아래 항목을 `</body>` 태그 위에 붙여서 해결.
+
+```javascript
+    <script src='//cdnjs.cloudflare.com/ajax/libs/showdown/1.6.2/showdown.min.js' type='text/javascript'/>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js' type='text/javascript'/>
+
+    <script type='text/javascript'>
+      var MarkdownHighlightInBlogger = {};
+      MarkdownHighlightInBlogger.unescapeHTML = function (html) {
+        var htmlNode = document.createElement(&quot;DIV&quot;);
+        htmlNode.innerHTML = html;
+        return htmlNode.innerText || htmlNode.textContent;
+      };
+
+      MarkdownHighlightInBlogger.convertMD = function () {
+        try {
+          console.info(&#39;Converting markdown using vanilla JavaScript&#39;);
+
+          // showdown renderer
+          var converter = new showdown.Converter();
+          converter.setFlavor(&#39;github&#39;);
+
+          // `pre` 요소를 모두 가져와서 처리
+          document.querySelectorAll(&#39;pre.markdown&#39;).forEach(function (block) {
+            var rawtext = block.innerText;
+            var md_html = converter.makeHtml(rawtext);
+            var tempDiv = document.createElement(&quot;div&quot;);
+            tempDiv.innerHTML = md_html;
+
+            // 변환된 HTML을 삽입하고 원래 마크다운 요소 숨김 처리
+            block.insertAdjacentElement(&quot;beforebegin&quot;, tempDiv);
+            block.style.display = &quot;none&quot;;
+          });
+
+          // `pre code` 요소에 하이라이트 적용
+          document.querySelectorAll(&#39;pre code&#39;).forEach(function (block) {
+      		hljs.highlightBlock(block);
+          });
+        } catch (exc) {
+          console.error(exc);
+        }
+      };
+
+      // DOM 로드 후 함수 실행
+      document.addEventListener(&quot;DOMContentLoaded&quot;, MarkdownHighlightInBlogger.convertMD);
+    </script>
+
+```
