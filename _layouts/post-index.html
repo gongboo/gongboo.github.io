@@ -40,9 +40,11 @@ layout: default
         {% include post__meta.html %}
       </header>
       {% endunless %}
-      <div style="color: rgb(82, 82, 82);text-decoration: none;border: 1px solid gray; padding: 20px;" id="index">index
-      </div>
+      <div style="color: rgb(82, 82, 82);text-decoration: none;border: 1px solid gray; padding: 20px;" id="index">
+        <h2>index</h2>
 
+      </div>
+      <br />
       <section class="page__content" itemprop="text">
         {% if page.toc %}
         <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
