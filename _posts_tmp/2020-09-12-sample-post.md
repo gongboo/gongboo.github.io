@@ -1,13 +1,15 @@
 ---
 layout: post
 title: "sample"
-date: 2020-09-12 
+date: 2020-09-12
 categories: sample
-tags: "blog"
+tags: blog
 use_math: true
 use_mermaid: true
 ---
-이건 지금 작동이 안됨   
+
+이건 지금 작동이 안됨
+
 ```mermaid
   graph TD;
     A-->B;
@@ -17,6 +19,7 @@ use_mermaid: true
 ```
 
 Here is a mermaid diagram:
+
 <div class="mermaid">
   graph TD
   A[Client] --> B[Load Balancer]
@@ -24,16 +27,15 @@ Here is a mermaid diagram:
   B --> D[Server02]
 </div>
 
-| 1     | 2 | 3 | 4 | 5 |
-|-------|---|---|---|---|
-| hello |   |   |   |   |
-|       |   |   |   |   |
-|       |   |   |   |   |
-
+| 1     | 2   | 3   | 4   | 5   |
+| ----- | --- | --- | --- | --- |
+| hello |     |     |     |     |
+|       |     |     |     |     |
+|       |     |     |     |     |
 
 ---
 
-*안녕하세요*
+_안녕하세요_
 
 **안녕하세요**
 
