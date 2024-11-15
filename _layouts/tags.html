@@ -54,7 +54,7 @@ layout: archive
   async function fetchBlogLinks() {
     try {
       // 로컬 XML 파일을 Fetch API로 가져옴
-      const response = await fetch('feed.xml');
+      const response = await fetch('https://gongboooo.blogspot.com/feeds/posts/default');
       const text = await response.text();
 
       // 텍스트 데이터를 XML로 파싱
