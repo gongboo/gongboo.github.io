@@ -19,7 +19,7 @@ locale: "Seoul"
 title: "Study Note"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
-name: "J.Y.L"
+name: "gongboo"
 description: "필기 + 메모 + 기록"
 url: https://gongboo.github.io
 baseurl: # the subpath of your site, e.g. "/blog"
@@ -92,7 +92,7 @@ analytics:
 
 # Site Author
 author:
-  name: "J.Y.L"
+  name: "gongboo"
   avatar: "/assets/images/computer_ghost.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "필기 + 메모 + 기록"
   location: "🌿" #"Seoul"
