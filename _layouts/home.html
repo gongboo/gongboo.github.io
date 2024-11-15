@@ -7,16 +7,46 @@ layout: archive
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% if paginator %}
-  {% assign posts = paginator.posts %}
+{% assign posts = paginator.posts %}
 {% else %}
-  {% assign posts = site.posts %}
+{% assign posts = site.posts %}
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
+  {% include archive-single.html type=entries_layout %}
   {% endfor %}
 </div>
 
 {% include paginator.html %}
+
+
+<h3 class="archive__subtitle">Blogger Post Links</h3>
+
+<ul id="postLinks"></ul>
+
+<script type="text/javascript">
+  // JSONP 콜백 함수
+  function displayLinks({ feed }) {
+    const postLinks = document.getElementById("postLinks");
+
+    feed.entry.forEach(entry => {
+      // link 중 'alternate' 타입의 링크 추출
+      const link = entry.link.find(l => l.rel === 'alternate').href;
+
+      // li 요소를 생성하여 링크 추가
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = link;
+      a.textContent = entry.title.$t; // 글 제목으로 링크 텍스트 설정
+      li.appendChild(a);
+
+      // ul 요소에 li 요소 추가
+      postLinks.appendChild(li);
+    });
+  }
+</script>
+<!-- JSONP 요청 -->
+<script type="text/javascript"
+  src="https://gongboooo.blogspot.com/feeds/posts/default?alt=json-in-script&callback=displayLinks"></script>
