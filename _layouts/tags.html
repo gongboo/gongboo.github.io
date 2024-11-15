@@ -5,45 +5,7 @@ layout: archive
 <h1>Blogger Post Links</h1>
 <ul id="postLinks"></ul>
 
-<script>
-  async function fetchBlogLinks() {
-    try {
-      // Blogger 피드의 XML 데이터를 Fetch API로 가져옴
-      const response = await fetch('https://gongboooo.blogspot.com/feeds/posts/default');
-      const text = await response.text();
 
-      // 텍스트 데이터를 XML로 파싱
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(text, "application/xml");
-
-      // entry 태그들을 가져옴
-      const entries = xmlDoc.getElementsByTagName("entry");
-
-      // 링크를 표시할 ul 요소
-      const postLinks = document.getElementById("postLinks");
-
-      // entry 태그 각각에 대해 주소를 추출하여 목록에 추가
-      for (let entry of entries) {
-        const link = entry.getElementsByTagName("link")[0].getAttribute("href");
-
-        // li 요소를 생성하고 링크를 추가
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = link;
-        a.textContent = link;
-        li.appendChild(a);
-
-        // ul 요소에 li 요소 추가
-        postLinks.appendChild(li);
-      }
-    } catch (error) {
-      console.error("Error fetching or parsing the XML:", error);
-    }
-  }
-
-  // 함수 호출
-  fetchBlogLinks();
-</script>
 
 {{ content }}
 
@@ -85,3 +47,45 @@ layout: archive
 {% endif %}
 {% endfor %}
 {% endfor %}
+
+
+
+<script>
+  async function fetchBlogLinks() {
+    try {
+      // Blogger 피드의 XML 데이터를 Fetch API로 가져옴
+      const response = await fetch('https://gongboooo.blogspot.com/feeds/posts/default');
+      const text = await response.text();
+
+      // 텍스트 데이터를 XML로 파싱
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, "application/xml");
+
+      // entry 태그들을 가져옴
+      const entries = xmlDoc.getElementsByTagName("entry");
+
+      // 링크를 표시할 ul 요소
+      const postLinks = document.getElementById("postLinks");
+
+      // entry 태그 각각에 대해 주소를 추출하여 목록에 추가
+      for (let entry of entries) {
+        const link = entry.getElementsByTagName("link")[0].getAttribute("href");
+
+        // li 요소를 생성하고 링크를 추가
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = link;
+        a.textContent = link;
+        li.appendChild(a);
+
+        // ul 요소에 li 요소 추가
+        postLinks.appendChild(li);
+      }
+    } catch (error) {
+      console.error("Error fetching or parsing the XML:", error);
+    }
+  }
+
+  // 함수 호출
+  fetchBlogLinks();
+</script>
