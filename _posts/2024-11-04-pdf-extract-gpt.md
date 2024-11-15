@@ -2,10 +2,15 @@
 layout: post-index
 title: "재밌는 이야기 : PDF를 추출해서 학습 자료를 만들기"
 date: 2024-11-04
-categories: project
+categories: journal
 tags:
-  - project
-  - side-project
+  - python
+  - data
+  - chatgpt
+  - pdf-extraction
+  - automation
+  - PyMuPDF
+  - tutorial
 use_math: false
 use_mermaid: false
 ---
@@ -20,7 +25,7 @@ use_mermaid: false
 # pdf 파일에서 굵은 글자 추출하기
 
 PDF는 바이너리 파일로 되어 있다. 구조는 헤더, 바디, 크로스 레퍼런스 테이블, 트레일러로 되어 있고 객체(택스트, 폰트, 이미지, 링크) 등등으로 구성.  
-내부 구조는 이런 형식으로 되어 있다. PDF 구조에 대해 자세히 알 필요는 없지만 대략적인 형태는 이렇다.
+PDF 구조에 대해 자세히 알 필요는 없지만 대략적인 형태는 이렇다.
 
 ```
 1 0 obj
@@ -90,11 +95,12 @@ for text in extracted_text:
 
 `font_flags`는 이진수 비트플래그로 되어 있고 첫번째 비트는 이탤릭 두번째 비트는 볼드를 나타낸다.
 
-첫 번째 비트 (0b0001 = 1): 이탤릭(Italic) 스타일  
-`is_italic = font_flags & 1`  
-두 번째 비트 (0b0010 = 2): 굵은 글씨(Bold) 스타일  
-세 번째 비트 (0b0100 = 4): 비례 글꼴 여부(Serif)  
-네 번째 비트 (0b1000 = 8): 모노스페이스 글꼴 여부(Monospace)  
+- 첫 번째 비트 (0b0001 = 1): 이탤릭(Italic) 스타일  
+  `is_italic = font_flags & 1`
+- 두 번째 비트 (0b0010 = 2): 굵은 글씨(Bold) 스타일
+- 세 번째 비트 (0b0100 = 4): 비례 글꼴 여부(Serif)
+- 네 번째 비트 (0b1000 = 8): 모노스페이스 글꼴 여부(Monospace)
+
 `font_flags != 6` 이런식으로 하면 0b0011 이니까 굵고 이탤릭인 글씨를 뜻한다.
 
 > `fontname = span['font']` 을 사용하면 구체적인 폰트 이름에 접근할 수도 있다.
@@ -116,15 +122,16 @@ page:1 postsynaptic neuron
 
 사용한 프롬프트는 다음과 같다.
 
-> 00학문에 대해서 영어 용어들을 공부를 하고 있어. 내가 주는 단어 목록을 보고 각 단어에 해당하는 한글 뜻과 영어 의미를 정리해줘. 예시는 다음과 같아
-> page:1 Presynaptic neuron - 시냅스 전 뉴런 - The neuron that sends a signal across the synapse.
+> 00학문에 대해서 영어 용어들을 공부를 하고 있어. 내가 주는 단어 목록을 보고 각 단어에 해당하는 한글 뜻과 영어 의미를 정리해줘. 예시는 다음과 같아  
+> page:1 Presynaptic neuron - 시냅스 전 뉴런 - The neuron that sends a signal across the synapse.  
 > page:1 Postsynaptic neuron - 시냅스 후 뉴런 - The neuron that receives a signal across the synapse.
 
-단어 30개에서 40개 정도는 한번에 거뜬이 뽑아낼 수 있었다
+단어 30개에서 40개 정도는 한번에 거뜬히 뽑아낼 수 있었다
 
 ## chatgpt 쓰면서 놀란 점
 
-놀란 점은 내가 준 단어를 있는 그대로 명령에만 따르지 않고 잘못 추출된 단어나 여러 단어의 모음인 단어들이 있는데 잘못 나뉘어 있는 것들을 알아서 처리 해줬다는 것이다. 정말..'알아서 잘 딱 깔끔하고 센스있게'가 따로 없다. 내가 관련 전공이 아니라서 이렇게 잘못 추출된 부분을 인지 하지 못해서 처음에 나뉜 단어 묶어서 처리 해줬을 때는 오류인줄 알고 여러번 다시 프롬프트 작성해서 말해봤지만 잘못 추출된 부분은 계속해서 맞게 처리했다.  
+놀란 점은 내가 준 단어를 있는 그대로 명령에만 따르지 않고 잘못 추출된 단어나 여러 단어의 모음인 단어들이 있는데 잘못 나뉘어 있는 것들을 알아서 처리 해줬다는 것이다. 정말..'알아서 잘 딱 깔끔하고 센스있게'가 따로 없다. 내가 관련 전공이 아니라서 이렇게 잘못 추출된 부분을 인지 하지 못해서 처음에 나뉜 단어 묶어서 처리 해줬을 때는 오류인줄 알았다.  
+챗 지피티 오류인줄 알고 여러번 다시 프롬프트 작성해서 말해봤지만 잘못 추출된 부분은 계속해서 맞게 고쳐서 처리해줬다.  
 나중에야 책 확인해보고 단어 확인해 보면서 알게 되어서 gpt가 한 수 위군 하고 느꼈다.
 
 # 마무리
