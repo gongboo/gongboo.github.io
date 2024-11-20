@@ -16,3 +16,7 @@ use_mermaid: false
 ## 여기서 접속가능
 
 [https://custom-diary-page.pages.dev/](https://custom-diary-page.pages.dev/)
+
+## 전체에서 데이터를 관리하기 위해 Redux 사용
+
+## canvas로 했어야 하지 않을까 뒤늦게 느껴 잠정 중단...
