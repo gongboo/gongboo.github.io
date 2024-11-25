@@ -13,6 +13,10 @@ use_mermaid: false
 
 # flutter 앱 배포
 
-https://play.google.com/store/apps/details?id=io.github.gongboo.rdd
+## 배포 연습으로 올려본
 
-https://play.google.com/store/apps/details?id=io.github.gongboo.pomodoro_timer_migrated
+[rubberduck debugging](https://play.google.com/store/apps/details?id=io.github.gongboo.rdd)
+
+## 간단한 뽀모도로 앱 개발
+
+[뽀모도로 앱](https://play.google.com/store/apps/details?id=io.github.gongboo.pomodoro_timer_migrated)
