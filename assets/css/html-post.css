@@ -1,0 +1,60 @@
+.html-post {
+  --post-accent: #236a72;
+  --post-border: #d9e3e3;
+  --post-surface: #f5f9f9;
+}
+
+.html-post > :first-child {
+  margin-top: 0;
+}
+
+.html-post .post-lead {
+  font-size: 1.12em;
+  line-height: 1.7;
+}
+
+.html-post .post-panel {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--post-border);
+  border-left: 4px solid var(--post-accent);
+  border-radius: 0.45rem;
+  background: var(--post-surface);
+}
+
+.html-post .post-panel > :first-child {
+  margin-top: 0;
+}
+
+.html-post .post-panel > :last-child {
+  margin-bottom: 0;
+}
+
+.html-post .post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.html-post .post-grid > * {
+  min-width: 0;
+  margin: 0;
+}
+
+.html-post details {
+  margin: 1.5rem 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--post-border);
+  border-radius: 0.45rem;
+}
+
+.html-post summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.html-post :focus-visible {
+  outline: 3px solid var(--post-accent);
+  outline-offset: 3px;
+}

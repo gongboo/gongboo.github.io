@@ -10,6 +10,8 @@
 *.gem
 .bundle
 Gemfile.lock
+Gemfile.preview.lock
+LOCAL_PREVIEW.md
 **/vendor/bundle
 
 # Node.js and NPM

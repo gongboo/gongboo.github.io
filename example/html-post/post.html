@@ -1,0 +1,49 @@
+---
+layout: html-post
+title: "HTML 게시글 예시: 한 페이지 안에서 설명하기"
+date: 2026-10-05
+categories: [information]
+tags: [html, example]
+excerpt: "같은 블로그의 게시글로 표, 강조 상자, 접기 영역을 조합한 예시입니다."
+---
+
+<p class="post-lead">
+  이 글은 기존 Markdown 글과 같은 목록에 나타나는 HTML 게시글 예시입니다.
+  본문은 필요한 구조를 자유롭게 만들고, 공통 디자인은 HTML 게시글 레이아웃에서 적용합니다.
+</p>
+
+<section aria-labelledby="html-post-structure">
+  <h2 id="html-post-structure">한 페이지에 여러 표현을 조합하기</h2>
+  <div class="post-grid">
+    <aside class="post-panel">
+      <h3>핵심</h3>
+      <p>의미에 맞는 HTML 요소로 내용을 나누면 읽기와 탐색이 쉬워집니다.</p>
+    </aside>
+    <aside class="post-panel">
+      <h3>확장</h3>
+      <p>특정 글에만 CSS와 JavaScript를 연결할 수도 있습니다.</p>
+    </aside>
+  </div>
+</section>
+
+<section aria-labelledby="html-post-comparison">
+  <h2 id="html-post-comparison">역할 구분</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">부분</th><th scope="col">하는 일</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Jekyll</th><td>글 목록, 주소, 공통 레이아웃 생성</td></tr>
+        <tr><th scope="row">HTML·CSS</th><td>게시글 안의 구조와 디자인</td></tr>
+        <tr><th scope="row">JavaScript</th><td>필요한 글의 상호작용</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<details>
+  <summary>이 게시글의 파일 구조 보기</summary>
+  <p><code>_posts/YYYY-MM-DD-slug.html</code>이 게시글 본문이고,
+    <code>_layouts/html-post.html</code>이 공통 레이아웃입니다.</p>
+</details>

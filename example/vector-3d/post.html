@@ -1,0 +1,43 @@
+---
+layout: html-post
+title: "3D로 살펴보는 벡터"
+date: 2026-10-05
+categories: [information]
+tags: [math, threejs, interactive]
+excerpt: "좌표를 바꾸고 장면을 돌려 보며 3차원 벡터를 살펴보는 HTML 게시글 예시입니다."
+post_styles:
+  - /assets/posts/vector-3d/style.css
+post_scripts:
+  - /assets/posts/vector-3d/scene.js
+---
+
+<p class="post-lead">
+  벡터는 크기와 방향을 함께 나타냅니다. 아래의 x, y, z 좌표를 바꿔 화살표가 어떻게 달라지는지 살펴보세요.
+</p>
+
+<section class="vector-demo" aria-labelledby="vector-demo-heading">
+  <h2 id="vector-demo-heading">벡터 조작하기</h2>
+  <div class="vector-demo__stage" id="vector-stage" aria-label="조작 가능한 3차원 벡터 장면">
+    <p id="vector-status" role="status">3D 장면을 불러오는 중입니다.</p>
+  </div>
+  <p class="vector-demo__hint">장면을 드래그해 시점을 돌리고, 스크롤로 확대하거나 축소할 수 있습니다.</p>
+
+  <div class="vector-demo__controls">
+    <label for="vector-x">x축 <output id="vector-x-value" for="vector-x">2</output></label>
+    <input id="vector-x" type="range" min="-3" max="3" step="0.1" value="2">
+
+    <label for="vector-y">y축 <output id="vector-y-value" for="vector-y">2</output></label>
+    <input id="vector-y" type="range" min="-3" max="3" step="0.1" value="2">
+
+    <label for="vector-z">z축 <output id="vector-z-value" for="vector-z">1</output></label>
+    <input id="vector-z" type="range" min="-3" max="3" step="0.1" value="1">
+  </div>
+  <p class="vector-demo__readout" aria-live="polite">
+    벡터 <strong id="vector-coordinates">(2, 2, 1)</strong> · 길이 <strong id="vector-length">3.00</strong>
+  </p>
+</section>
+
+<aside class="post-panel">
+  <h2>길이는 어떻게 계산할까?</h2>
+  <p>벡터 (x, y, z)의 길이는 √(x² + y² + z²)입니다. 좌표가 모두 0이면 화살표가 사라집니다.</p>
+</aside>

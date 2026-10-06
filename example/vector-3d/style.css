@@ -1,0 +1,68 @@
+.html-post .vector-demo {
+  margin: 2rem 0;
+}
+
+.html-post .vector-demo__stage {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 48vw, 460px);
+  overflow: hidden;
+  border: 1px solid #cbd9dc;
+  border-radius: 0.75rem;
+  background: #101c29;
+  color: #eaf7ff;
+}
+
+.html-post .vector-demo__stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.html-post .vector-demo__stage canvas:active {
+  cursor: grabbing;
+}
+
+.html-post .vector-demo__stage [role="status"] {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.html-post .vector-demo__hint {
+  margin: 0.6rem 0 1.5rem;
+  color: #52646b;
+  font-size: 0.9em;
+}
+
+.html-post .vector-demo__controls {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 8rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem 1rem;
+}
+
+.html-post .vector-demo__controls label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.html-post .vector-demo__controls input {
+  width: 100%;
+  margin: 0;
+  accent-color: #236a72;
+}
+
+.html-post .vector-demo__readout {
+  margin: 1.2rem 0 0;
+  font-variant-numeric: tabular-nums;
+}

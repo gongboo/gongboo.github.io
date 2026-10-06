@@ -1,0 +1,11 @@
+---
+layout: single
+---
+
+<div class="html-post">
+  {{ content }}
+</div>
+
+{% for script in page.post_scripts %}
+<script type="module" src="{{ script | relative_url }}"></script>
+{% endfor %}

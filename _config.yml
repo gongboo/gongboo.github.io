@@ -154,13 +154,18 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - bin
+  - example
+  - temp
   - Capfile
   - CHANGELOG
   - config
   - Gemfile
+  - Gemfile.preview
   - Gruntfile.js
   - gulpfile.js
   - LICENSE
+  - LOCAL_PREVIEW.md
   - log
   - node_modules
   - package.json
@@ -198,6 +203,12 @@ kramdown:
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+    - slash-div
 
 # Outputting
 permalink: /:categories/:title/
