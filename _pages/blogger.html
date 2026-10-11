@@ -1,0 +1,58 @@
+---
+title: "짧은 메모"
+layout: archive
+permalink: /blogger/
+author_profile: true
+---
+
+<p>Blogspot에 기록한 짧은 글과 참고 링크입니다. 최근 글 25개를 보여줍니다.</p>
+<p id="blogger-status" role="status">글 목록을 불러오는 중입니다.</p>
+<ul id="blogger-posts"></ul>
+<p><a href="https://gongboooo.blogspot.com/">Blogspot에서 전체 글 보기</a></p>
+
+<script>
+  (function () {
+    const status = document.getElementById("blogger-status");
+    const posts = document.getElementById("blogger-posts");
+    let received = false;
+
+    window.displayBloggerPosts = function (data) {
+      received = true;
+      if (!data || !data.feed) {
+        status.textContent = "글 목록을 불러오지 못했습니다. Blogspot에서 직접 확인해 주세요.";
+        return;
+      }
+      const entries = Array.isArray(data.feed.entry) ? data.feed.entry : [];
+
+      const items = document.createDocumentFragment();
+      entries.forEach(function (entry) {
+        const link = entry.link && entry.link.find(function (item) {
+          return item.rel === "alternate";
+        });
+        if (!link || !entry.title) return;
+
+        const item = document.createElement("li");
+        const anchor = document.createElement("a");
+        anchor.href = link.href;
+        anchor.textContent = entry.title.$t;
+        item.appendChild(anchor);
+        items.appendChild(item);
+      });
+
+      posts.replaceChildren(items);
+      status.textContent = posts.children.length
+        ? `최근 글 ${posts.children.length}개`
+        : "공개된 글이 없습니다.";
+    };
+
+    const script = document.createElement("script");
+    script.src = "https://gongboooo.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=25&callback=displayBloggerPosts";
+    script.onerror = function () {
+      status.textContent = "글 목록을 불러오지 못했습니다. Blogspot에서 직접 확인해 주세요.";
+    };
+    script.onload = function () {
+      if (!received) status.textContent = "글 목록을 불러오지 못했습니다. Blogspot에서 직접 확인해 주세요.";
+    };
+    document.head.appendChild(script);
+  }());
+</script>

@@ -159,6 +159,30 @@ body {
   }
 }
 
+body.layout--post,
+body.layout--post-index,
+body.layout--html-post {
+  .page {
+    font-size: 15px;
+
+    @include breakpoint($medium) {
+      font-size: 17px;
+    }
+
+    @include breakpoint($large) {
+      font-size: 18px;
+    }
+
+    @include breakpoint($x-large) {
+      font-size: 19px;
+    }
+  }
+
+  .page__title {
+    font-size: 1.45em;
+  }
+}
+
 .page__hero {
   position: relative;
   margin-bottom: 2em;
