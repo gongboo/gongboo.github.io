@@ -6,7 +6,7 @@ main:
     url: /categories/
   - title: "comments"
     url: /comments/
-  - title: "짧은 메모"
+  - title: "blogspot"
     url: /blogger/
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/

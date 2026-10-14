@@ -163,23 +163,19 @@ body.layout--post,
 body.layout--post-index,
 body.layout--html-post {
   .page {
-    font-size: 15px;
-
-    @include breakpoint($medium) {
-      font-size: 17px;
-    }
-
-    @include breakpoint($large) {
-      font-size: 18px;
-    }
-
-    @include breakpoint($x-large) {
-      font-size: 19px;
-    }
+    font-size: calc(1rem - 1px);
   }
 
   .page__title {
-    font-size: 1.45em;
+    font-size: 1.4em;
+  }
+
+  .page__content {
+    div.highlighter-rouge,
+    figure.highlight,
+    table {
+      font-size: max(12px, 0.75em);
+    }
   }
 }
 

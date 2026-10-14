@@ -1,25 +1,53 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<main id="main" class="home" role="main">
+  <div class="home__inner">
+    <header class="home__hero">
+      <h1>study note</h1>
+      <p class="home__intro">🧩 🦆 💡</p>
+      <nav class="home__shortcuts" aria-label="글 탐색">
+        <a href="{{ '/categories/' | relative_url }}">주제별 보기</a>
+        <a href="{{ '/tags/' | relative_url }}">태그별 보기</a>
+        <a class="home__blogspot-link" href="{{ '/blogger/' | relative_url }}">
+          blogspot <span>메모용 서브 블로그 <span aria-hidden="true">↗</span></span>
+        </a>
+      </nav>
+    </header>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+    {% if paginator %}
+      {% assign posts = paginator.posts %}
+    {% else %}
+      {% assign posts = site.posts %}
+    {% endif %}
 
-{% if paginator %}
-{% assign posts = paginator.posts %}
-{% else %}
-{% assign posts = site.posts %}
-{% endif %}
+    <section class="home__recent" aria-labelledby="home-recent-title">
+      <div class="home__section-heading">
+        <div>
+          <p class="home__eyebrow">ARCHIVE</p>
+          <h2 id="home-recent-title">최근 글</h2>
+        </div>
+        <span>{{ site.posts.size }}개의 기록</span>
+      </div>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-  {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-</div>
+      <ol class="home__post-list">
+        {% for post in posts %}
+          <li>
+            <article class="home__post">
+              <div>
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title | markdownify | strip_html }}</a></h3>
+                {% if post.excerpt %}
+                  <p>{{ post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 130 }}</p>
+                {% endif %}
+              </div>
+            </article>
+          </li>
+        {% endfor %}
+      </ol>
 
-{% include paginator.html %}
+      {% include paginator.html %}
+    </section>
 
-<h3 class="archive__subtitle">짧은 메모</h3>
-<p>짧은 정보와 참고 링크는 <a href="{{ '/blogger/' | relative_url }}">Blogspot 글 목록</a>에서 볼 수 있습니다.</p>
+  </div>
+</main>
