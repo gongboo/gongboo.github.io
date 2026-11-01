@@ -37,6 +37,40 @@ post_scripts:
 - Jekyll은 게시글 안의 Liquid 문법(`{{ ... }}`, `{% ... %}`)도 처리합니다.
   JavaScript 템플릿 문자열 등에서 이 문법을 문자 그대로 써야 할 때는
   `{% raw %}`와 `{% endraw %}`로 감쌉니다.
+- 여러 HTML 게시글에서 함께 쓰는 부품(아래 목차 등)은 `_layouts/html-post.html`과
+  `assets/css/html-post.css`에 둡니다. 한 글에서만 쓰는 것은 그 글의
+  `assets/posts/<slug>/`에 둡니다.
 - Three.js처럼 외부 라이브러리를 사용하는 게시글은 해당 글의 스크립트에서만
   불러옵니다. 외부 CDN이 끊기면 장면이 로드되지 않으므로 중요한 자산은
   나중에 로컬 파일로 옮길 수 있습니다.
+
+## 본문 위 목차
+
+앞부분 설정에 `post_toc: true`를 넣으면 본문 맨 위에 목차가 생깁니다. 빌드할 때
+본문의 `<h2>`를 읽어 만들므로 JavaScript가 필요 없고, 제목을 고치면 목차도 다시
+빌드할 때 함께 바뀝니다.
+
+```html
+---
+layout: html-post
+title: "글 제목"
+post_toc: true
+# post_toc_max: 3   # h3까지 넣을 때. 기본값은 2(h2만)
+---
+
+<section aria-labelledby="first-topic">
+  <h2 id="first-topic">첫 번째 주제</h2>
+  ...
+</section>
+```
+
+- 목차에 들어갈 제목에는 **`id`를 꼭 붙입니다.** Markdown과 달리 HTML 글은 제목
+  `id`가 자동으로 생기지 않아서, `id`가 없으면 링크가 `#`만 남습니다.
+  `post_toc_max: 3`으로 올리면 `<h3>`에도 `id`가 필요합니다.
+- 목차에서 빼고 싶은 제목에는 `class="no_toc"`를 붙입니다.
+  예: `<h3 class="no_toc">참고</h3>`
+- 목차는 `_layouts/html-post.html`이 테마의 `_includes/toc.html`을 불러서
+  만듭니다. 모양은 `assets/css/html-post.css`의 `.post-toc`에서 바꿉니다.
+- 테마 기본 기능인 `toc: true`(오른쪽 사이드바 목차)와는 별개입니다. 사이드바
+  목차는 h1~h6을 모두 넣으므로 HTML 글에는 `post_toc`를 권장합니다.
+- 만든 뒤에는 빌드된 페이지에서 `href="#"`만 있는 목차 링크가 없는지 확인합니다.

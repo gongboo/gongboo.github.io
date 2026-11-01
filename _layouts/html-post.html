@@ -3,6 +3,13 @@ layout: single
 ---
 
 <div class="html-post">
+  {% if page.post_toc %}
+  {% assign post_toc_max = page.post_toc_max | default: 2 %}
+  <nav class="post-toc" aria-label="목차">
+    <p class="post-toc__title">목차</p>
+    {% include toc.html html=content sanitize=true ordered=true h_min=2 h_max=post_toc_max %}
+  </nav>
+  {% endif %}
   {{ content }}
 </div>
 

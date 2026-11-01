@@ -19,6 +19,9 @@ example/
 `assets/posts/vector-3d/`로 복사해야 합니다. 다른 폴더 이름을 쓸 경우
 게시글의 `post_styles`, `post_scripts` 경로도 함께 바꿉니다.
 
+`html-post/post.html`은 `post_toc: true`로 본문 위 목차를 켠 예시입니다.
+목차에 들어갈 `<h2>`에는 `id`를 붙여야 합니다.
+
 공통 레이아웃은 `_layouts/html-post.html`, 공통 스타일은
 `assets/css/html-post.css`에 있습니다. 자세한 작성 규칙은
 `_docs/html-posts.md`를 참고하세요.

@@ -1,0 +1,627 @@
+---
+layout: html-post
+title: "멀티미터 사용법 기초"
+date: 2026-10-25
+categories: [electronics]
+tags: [multimeter]
+post_toc: true
+excerpt: "전압·전류·저항 개념, 다이얼과 단자 선택, 범위와 정확도 읽는 법, 상황별 측정 방법과 안전 수칙 정리."
+post_styles:
+  - /assets/posts/multimeter-basics/style.css
+post_scripts:
+  - /assets/posts/multimeter-basics/main.js
+---
+
+<p class="post-lead">
+  멀티미터는 전압, 전류, 저항을 한 기계로 재는 측정기다.
+  측정할 때 정할 것은 세 가지다. <strong>다이얼 위치, 빨간 리드를 꽂을 단자, 회로에 대는 방법.</strong>
+</p>
+
+
+<section aria-labelledby="mm-concepts">
+  <h2 id="mm-concepts">전압, 전류, 저항</h2>
+  <p>수도관에 비유하면 다음과 같다.</p>
+  <div class="post-grid">
+    <aside class="post-panel">
+      <h3>전압 <span class="mm-unit">V, 볼트</span></h3>
+      <p>물을 미는 <strong>수압</strong>. 두 지점 사이의 차이라서 <strong>두 곳에 리드를 대고</strong> 잰다.
+        "이 점의 전압"이라고 하면 보통 회로의 기준점(GND, −극)과의 차이를 말한다.</p>
+    </aside>
+    <aside class="post-panel">
+      <h3>전류 <span class="mm-unit">A, 암페어</span></h3>
+      <p>관을 흐르는 <strong>물의 양</strong>. 한 지점을 지나가는 양이라서
+        <strong>회로를 끊고 멀티미터가 그 사이를 지나가게</strong> 연결해서 잰다.</p>
+    </aside>
+    <aside class="post-panel">
+      <h3>저항 <span class="mm-unit">Ω, 옴</span></h3>
+      <p>흐름을 <strong>방해하는 정도</strong>. 멀티미터가 직접 작은 전류를 흘리고 걸리는 전압으로 계산하므로
+        <strong>전원을 끄고</strong> 잰다.</p>
+    </aside>
+  </div>
+  <p>
+    세 값의 관계는 옴의 법칙 <code>V = I × R</code>.
+    3V를 220Ω에 걸면 3 ÷ 220 ≈ 0.0136A(13.6mA)가 흐른다.
+    전력은 <code>P = V × I</code>로, 이 경우 약 0.04W다.
+  </p>
+
+  <h3>직류와 교류</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">직류 (DC)</th><th scope="col">교류 (AC)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">방향</th><td>한 방향으로 일정</td><td>주기적으로 바뀜(한국 60Hz, 1초에 60번)</td></tr>
+        <tr><th scope="row">극성</th><td>+와 −가 있음</td><td>구분 없음</td></tr>
+        <tr><th scope="row">예</th><td>건전지, 배터리, 충전기 출력, 전자회로 내부</td><td>콘센트, 변압기 2차측</td></tr>
+        <tr><th scope="row">다이얼</th><td><code>V⎓</code>, <code>A⎓</code></td><td><code>V~</code>, <code>A~</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>교류 전압 "220V"는 실효값(RMS)이다. 같은 저항에서 같은 열을 내는 직류 전압으로 환산한 값이고, 순간 최댓값은 약 311V(220 × √2)다.</p>
+
+  <h3>단위 접두어</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">접두어</th><th scope="col">배수</th><th scope="col">예</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><code>M</code> 메가</th><td>× 1,000,000</td><td>10MΩ = 10,000,000Ω</td></tr>
+        <tr><th scope="row"><code>k</code> 킬로</th><td>× 1,000</td><td>4.7kΩ = 4,700Ω</td></tr>
+        <tr><th scope="row"><code>m</code> 밀리</th><td>× 0.001</td><td>20mA = 0.02A</td></tr>
+        <tr><th scope="row"><code>µ</code> 마이크로</th><td>× 0.000001</td><td>100µA = 0.1mA</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>대문자 <code>M</code>(메가)과 소문자 <code>m</code>(밀리)는 10억 배 차이다. 화면 구석의 작은 단위 표시를 꼭 같이 읽는다.</p>
+</section>
+
+<section aria-labelledby="mm-parts">
+  <h2 id="mm-parts">각 부분</h2>
+
+  <figure class="mm-figure">
+    <svg viewBox="0 0 420 360" role="img" aria-labelledby="mm-parts-title mm-parts-desc">
+      <title id="mm-parts-title">디지털 멀티미터의 구조</title>
+      <desc id="mm-parts-desc">위에서부터 화면, 다이얼, 아래쪽의 입력 단자 세 개(10A, COM, VΩmA)와 빨간색·검은색 리드가 있다.</desc>
+      <rect x="110" y="10" width="200" height="340" rx="22" class="mm-svg-body"/>
+      <rect x="130" y="32" width="160" height="62" rx="6" class="mm-svg-lcd"/>
+      <text x="280" y="76" text-anchor="end" class="mm-svg-lcd-text">1.552</text>
+      <circle cx="210" cy="190" r="44" class="mm-svg-dial"/>
+      <circle cx="210" cy="190" r="30" class="mm-svg-knob"/>
+      <rect x="205" y="152" width="10" height="38" rx="4" class="mm-svg-pointer"/>
+      <text x="210" y="138" text-anchor="middle" class="mm-svg-small">V⎓</text>
+      <text x="272" y="162" text-anchor="middle" class="mm-svg-small">V~</text>
+      <text x="274" y="222" text-anchor="middle" class="mm-svg-small">A</text>
+      <text x="144" y="162" text-anchor="middle" class="mm-svg-small">OFF</text>
+      <text x="146" y="222" text-anchor="middle" class="mm-svg-small">Ω</text>
+      <circle cx="150" cy="292" r="13" class="mm-svg-jack"/>
+      <circle cx="210" cy="292" r="13" class="mm-svg-jack"/>
+      <circle cx="270" cy="292" r="13" class="mm-svg-jack mm-svg-jack--red"/>
+      <text x="150" y="324" text-anchor="middle" class="mm-svg-small">10A</text>
+      <text x="210" y="324" text-anchor="middle" class="mm-svg-small">COM</text>
+      <text x="270" y="324" text-anchor="middle" class="mm-svg-small">VΩmA</text>
+      <path d="M210 292 C 200 340, 120 330, 70 350" class="mm-svg-lead mm-svg-lead--black"/>
+      <path d="M270 292 C 290 340, 360 330, 400 350" class="mm-svg-lead mm-svg-lead--red"/>
+      <g class="mm-svg-callout">
+        <circle cx="72" cy="63" r="13"/><text x="72" y="68" text-anchor="middle">1</text>
+        <line x1="85" y1="63" x2="130" y2="63"/>
+        <circle cx="52" cy="190" r="13"/><text x="52" y="195" text-anchor="middle">2</text>
+        <line x1="65" y1="190" x2="166" y2="190"/>
+        <circle cx="52" cy="270" r="13"/><text x="52" y="275" text-anchor="middle">3</text>
+        <line x1="65" y1="274" x2="137" y2="288"/>
+        <circle cx="372" cy="270" r="13"/><text x="372" y="275" text-anchor="middle">4</text>
+        <line x1="359" y1="276" x2="296" y2="318"/>
+      </g>
+    </svg>
+  </figure>
+
+  <ol class="mm-legend">
+    <li><strong>화면</strong> — 측정값, 단위, 음수 부호(−), 배터리 부족·HOLD 같은 상태 표시.</li>
+    <li><strong>다이얼(로터리 스위치)</strong> — 측정 종류와 범위 선택. 사용 후 <code>OFF</code>.</li>
+    <li><strong>입력 단자</strong> — 검은 리드는 항상 <code>COM</code>. 빨간 리드는 <code>VΩmA</code>(전압·저항·작은 전류) 또는 <code>10A</code>(큰 전류).
+      제품에 따라 <code>VΩ</code>와 <code>mA</code> 단자가 따로 있어 구멍이 4개인 것도 있다.</li>
+    <li><strong>리드(테스트 프로브)</strong> — 빨강은 +쪽, 검정은 −쪽(기준점). 끝을 바꿔 끼우는 악어 클립을 쓰면 손을 떼고 잴 수 있다.</li>
+  </ol>
+
+  <h3>다이얼 기호</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">기호</th><th scope="col">뜻</th><th scope="col">예시</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><code>V⎓</code> 또는 <code>DCV</code></th><td>직류 전압</td><td>건전지, 충전기 출력, 아두이노 핀</td></tr>
+        <tr><th scope="row"><code>V~</code> 또는 <code>ACV</code></th><td>교류 전압</td><td>가정용 콘센트(한국은 약 220V)</td></tr>
+        <tr><th scope="row"><code>mV</code></th><td>작은 전압 전용 범위</td><td>센서 출력, 션트 저항 양단</td></tr>
+        <tr><th scope="row"><code>A⎓</code>, <code>mA</code>, <code>µA</code></th><td>직류 전류</td><td>LED 회로 전류, 대기 전류</td></tr>
+        <tr><th scope="row"><code>A~</code></th><td>교류 전류</td><td>저가형에는 없는 경우가 많음</td></tr>
+        <tr><th scope="row"><code>Ω</code></th><td>저항</td><td>저항 부품 값, 코일, 히터선</td></tr>
+        <tr><th scope="row"><code>·)))</code></th><td>통전 확인(부저)</td><td>단선 여부, 납땜 연결</td></tr>
+        <tr><th scope="row"><code>▷|</code></th><td>다이오드 테스트</td><td>다이오드·LED 방향과 상태</td></tr>
+        <tr><th scope="row"><code>F</code> 또는 <code>⊣⊢</code></th><td>정전 용량(커패시턴스)</td><td>콘덴서 용량</td></tr>
+        <tr><th scope="row"><code>Hz</code></th><td>주파수</td><td>PWM 신호, 교류 주파수</td></tr>
+        <tr><th scope="row"><code>hFE</code></th><td>트랜지스터 증폭률</td><td>전용 소켓에 꽂아서 잼</td></tr>
+        <tr><th scope="row"><code>°C</code>, <code>°F</code></th><td>온도</td><td>K형 열전대 프로브 사용</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>버튼</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">버튼</th><th scope="col">기능</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><code>HOLD</code></th><td>현재 값을 화면에 고정. 리드를 대고 있느라 화면을 못 볼 때 사용. 켜 둔 걸 잊으면 값이 안 바뀌는 것처럼 보인다.</td></tr>
+        <tr><th scope="row"><code>SELECT</code> / <code>FUNC</code></th><td>한 다이얼 칸에 기능이 여러 개일 때 전환(예: <code>Ω</code>·<code>·)))</code>·<code>▷|</code>, DC·AC).</td></tr>
+        <tr><th scope="row"><code>RANGE</code></th><td>오토 레인지를 끄고 범위를 수동으로 고정.</td></tr>
+        <tr><th scope="row"><code>REL</code> / <code>Δ</code></th><td>현재 값을 0으로 잡고 차이만 표시. 리드 저항을 빼고 작은 저항을 잴 때 사용.</td></tr>
+        <tr><th scope="row"><code>MIN/MAX</code></th><td>측정 중 최솟값·최댓값 기록.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>대부분 일정 시간 조작이 없으면 자동으로 꺼진다(Auto Power Off). 긴 측정 중 꺼지면 이 기능 때문이다.</p>
+</section>
+
+<section aria-labelledby="mm-range">
+  <h2 id="mm-range">범위, 카운트, 정확도</h2>
+
+  <h3>수동 범위와 오토 레인지</h3>
+  <p>
+    수동 범위 멀티미터에서 다이얼 숫자(2, 20, 200…)는 <em>그 칸에서 잴 수 있는 최댓값</em>이다.
+    <code>20</code>이면 19.99V까지 소수 둘째 자리로 표시하고, 넘으면 화면 왼쪽에 <code>1</code>만 뜨거나
+    <code>OL</code>(Over Load)이 뜬다. 이때는 한 칸 큰 범위로 올린다.
+  </p>
+  <p>
+    값을 모르면 <strong>가장 큰 범위부터 한 칸씩 내린다</strong>. 범위가 작을수록 자릿수가 늘어난다.
+    <strong>오토 레인지</strong> 멀티미터는 범위를 자동으로 바꾸므로 기호만 맞추면 된다.
+    대신 범위를 찾는 동안 1~2초 정도 값이 늦게 뜬다.
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <caption>1.55V 건전지를 수동 범위로 잴 때</caption>
+      <thead>
+        <tr><th scope="col">범위</th><th scope="col">화면</th><th scope="col">비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><code>200m</code></th><td><code>1</code></td><td>범위 초과</td></tr>
+        <tr><th scope="row"><code>2</code></th><td><code>1.550</code></td><td>가장 자세함</td></tr>
+        <tr><th scope="row"><code>20</code></th><td><code>1.55</code></td><td></td></tr>
+        <tr><th scope="row"><code>200</code></th><td><code>1.5</code></td><td></td></tr>
+        <tr><th scope="row"><code>600</code></th><td><code>2</code></td><td>정수만 표시</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>카운트</h3>
+  <p>
+    "2000카운트", "6000카운트"는 화면에 표시할 수 있는 최대 숫자다. 2000카운트는 1999까지, 6000카운트는 5999까지.
+    2000카운트 제품은 5V를 재려면 20V 범위로 가야 해서 <code>5.00</code>까지 보이고,
+    6000카운트 제품은 6V 범위에서 <code>5.000</code>까지 보인다. 카운트가 클수록 같은 값을 한 자리 더 자세히 읽는다.
+  </p>
+
+  <h3>정확도 표기 읽기</h3>
+  <p>
+    설명서에 <code>DCV ±(0.5% + 2)</code>처럼 적혀 있다. "읽은 값의 0.5% + 마지막 자리 2칸"만큼 틀릴 수 있다는 뜻이다.
+  </p>
+  <div class="post-panel">
+    <p>2V 범위에서 <code>1.550</code>이 떴을 때</p>
+    <ul>
+      <li>0.5% × 1.550 = 0.00775V</li>
+      <li>마지막 자리(0.001V) × 2 = 0.002V</li>
+      <li>합계 약 ±0.010V → 실제 값은 대략 <strong>1.540~1.560V</strong></li>
+    </ul>
+  </div>
+  <p>
+    같은 값을 큰 범위에서 재면 "마지막 자리 2칸"이 커져 오차가 늘어난다. 자릿수가 많이 보여도
+    정확도가 그만큼 높다는 뜻은 아니다. 표시 자릿수(분해능)와 정확도는 다른 개념이다.
+  </p>
+</section>
+
+<section aria-labelledby="mm-connect">
+  <h2 id="mm-connect">병렬 연결과 직렬 연결</h2>
+  <p>건전지 → 220Ω 저항 → LED로 이어진 회로에서 LED 전압과 회로 전류를 재는 연결이다.</p>
+
+  <div class="post-grid">
+    <figure class="mm-circuit">
+      <svg viewBox="0 0 360 210" role="img" aria-labelledby="mm-par-title">
+        <title id="mm-par-title">전압 측정: 멀티미터를 LED 양 끝에 병렬로 연결</title>
+        <path d="M50 108 V50 H125 M175 50 H250 V100 M250 126 V180 H50 V122" class="mm-svg-wire"/>
+        <line x1="32" y1="108" x2="68" y2="108" class="mm-svg-wire"/>
+        <line x1="41" y1="122" x2="59" y2="122" class="mm-svg-wire mm-svg-wire--thick"/>
+        <text x="22" y="105" text-anchor="middle" class="mm-svg-small">+</text>
+        <text x="22" y="130" text-anchor="middle" class="mm-svg-small">−</text>
+        <text x="76" y="120" class="mm-svg-small">3V</text>
+        <rect x="125" y="42" width="50" height="16" class="mm-svg-part"/>
+        <text x="150" y="34" text-anchor="middle" class="mm-svg-small">220Ω</text>
+        <polygon points="238,100 262,100 250,124" class="mm-svg-led"/>
+        <line x1="238" y1="126" x2="262" y2="126" class="mm-svg-wire"/>
+        <path d="M266 106 L276 97 M266 117 L276 108" class="mm-svg-wire mm-svg-wire--thin"/>
+        <polygon points="280,93 271,96 277,101" class="mm-svg-dot"/>
+        <polygon points="280,104 271,107 277,112" class="mm-svg-dot"/>
+        <text x="228" y="118" text-anchor="end" class="mm-svg-small">LED</text>
+        <path d="M250 80 H320 V95" class="mm-svg-lead mm-svg-lead--red mm-svg-lead--thin"/>
+        <path d="M250 152 H320 V135" class="mm-svg-lead mm-svg-lead--black mm-svg-lead--thin"/>
+        <circle cx="250" cy="80" r="4" class="mm-svg-dot"/>
+        <circle cx="250" cy="152" r="4" class="mm-svg-dot"/>
+        <circle cx="320" cy="115" r="20" class="mm-svg-meter"/>
+        <text x="320" y="121" text-anchor="middle" class="mm-svg-meter-text">V</text>
+      </svg>
+      <figcaption><strong>전압</strong>: 회로는 그대로 두고 LED 양 끝에 나란히(병렬). 약 1.9V.</figcaption>
+    </figure>
+
+    <figure class="mm-circuit">
+      <svg viewBox="0 0 360 250" role="img" aria-labelledby="mm-ser-title">
+        <title id="mm-ser-title">전류 측정: 아래쪽 전선을 끊고 끊어진 두 끝에 멀티미터를 직렬로 연결</title>
+        <path d="M50 108 V50 H125 M175 50 H250 V100 M250 126 V180 H182 M118 180 H50 V122" class="mm-svg-wire"/>
+        <line x1="32" y1="108" x2="68" y2="108" class="mm-svg-wire"/>
+        <line x1="41" y1="122" x2="59" y2="122" class="mm-svg-wire mm-svg-wire--thick"/>
+        <text x="22" y="105" text-anchor="middle" class="mm-svg-small">+</text>
+        <text x="22" y="130" text-anchor="middle" class="mm-svg-small">−</text>
+        <text x="76" y="120" class="mm-svg-small">3V</text>
+        <rect x="125" y="42" width="50" height="16" class="mm-svg-part"/>
+        <text x="150" y="34" text-anchor="middle" class="mm-svg-small">220Ω</text>
+        <polygon points="238,100 262,100 250,124" class="mm-svg-led"/>
+        <line x1="238" y1="126" x2="262" y2="126" class="mm-svg-wire"/>
+        <path d="M266 106 L276 97 M266 117 L276 108" class="mm-svg-wire mm-svg-wire--thin"/>
+        <polygon points="280,93 271,96 277,101" class="mm-svg-dot"/>
+        <polygon points="280,104 271,107 277,112" class="mm-svg-dot"/>
+        <text x="228" y="118" text-anchor="end" class="mm-svg-small">LED</text>
+        <path d="M182 180 V226 H170" class="mm-svg-lead mm-svg-lead--red mm-svg-lead--thin"/>
+        <path d="M118 180 V226 H130" class="mm-svg-lead mm-svg-lead--black mm-svg-lead--thin"/>
+        <circle cx="182" cy="180" r="4" class="mm-svg-open"/>
+        <circle cx="118" cy="180" r="4" class="mm-svg-open"/>
+        <text x="150" y="172" text-anchor="middle" class="mm-svg-small mm-svg-muted">끊은 자리</text>
+        <circle cx="150" cy="226" r="20" class="mm-svg-meter"/>
+        <text x="150" y="232" text-anchor="middle" class="mm-svg-meter-text">A</text>
+      </svg>
+      <figcaption><strong>전류</strong>: 선 하나를 끊고, 끊어진 두 끝에 리드를 하나씩 댄다(직렬). 전류가 멀티미터를 거쳐 흐른다. 약 5.5mA.</figcaption>
+    </figure>
+  </div>
+
+  <h3>왜 이렇게 연결하나</h3>
+  <p>멀티미터는 측정 모드에 따라 내부 저항이 정반대가 된다. 회로에 영향을 주지 않으려고 그렇게 만들어져 있다.</p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">모드</th><th scope="col">내부 저항</th><th scope="col">이유</th><th scope="col">잘못 연결하면</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">전압</th><td>매우 큼(보통 약 10MΩ)</td><td>나란히 붙였을 때 멀티미터로 새는 전류를 거의 0으로</td><td>직렬로 넣으면 전류를 막아 회로가 멈춤</td></tr>
+        <tr><th scope="row">전류</th><td>매우 작음(션트 저항, 1Ω 이하 수준)</td><td>사이에 끼워도 흐름을 거의 방해하지 않게</td><td>병렬로 대면 단락, 퓨즈 단선</td></tr>
+        <tr><th scope="row">저항</th><td>— (직접 전류를 흘림)</td><td>알고 있는 작은 전류를 흘리고 걸리는 전압으로 계산</td><td>전원이 있으면 값이 틀리고 기기 손상 가능</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    전류 모드의 작은 내부 저항도 0은 아니어서, 측정하는 동안 수십~수백 mV의 전압을 잡아먹는다(부담 전압, burden voltage).
+    3.3V 같은 저전압 회로에서 전류를 재는 동안 동작이 이상해지면 이 때문일 수 있다.
+  </p>
+</section>
+
+<section aria-labelledby="mm-three-rules">
+  <h2 id="mm-three-rules">측정 전 확인</h2>
+  <ol class="mm-steps">
+    <li><strong>다이얼</strong>: 측정 종류(V⎓, V~, Ω, A)와 범위.</li>
+    <li><strong>단자</strong>: 검정은 COM, 빨강은 VΩmA. 전류 측정 후 빨강이 10A에 남아 있지 않은지.</li>
+    <li><strong>연결 방법</strong>: 전압은 양 끝에 나란히(병렬), 전류는 회로를 끊고 사이에(직렬),
+      저항은 전원을 끄고 부품을 빼서.</li>
+  </ol>
+  <p>가장 흔하고 위험한 실수는 <strong>전류 모드인 채로 건전지나 콘센트 양 끝에 리드를 대는 것</strong>이다.</p>
+  <p>리드를 대는 순서도 정해 두면 좋다. 연결할 때는 <strong>검정(COM) 먼저, 빨강 나중</strong>. 뗄 때는 <strong>빨강 먼저, 검정 나중</strong>. 전압이 걸린 빨간 리드가 손에 남는 시간을 줄인다.</p>
+</section>
+
+<section class="mm-lab" aria-labelledby="mm-lab-heading">
+  <h2 id="mm-lab-heading">연습</h2>
+  <p>다이얼, 단자, 측정 대상을 바꾸면 화면 값과 설명이 바뀐다.</p>
+
+  <div class="mm-lab__grid">
+    <div class="mm-meter" aria-label="연습용 멀티미터">
+      <div class="mm-lcd" aria-live="polite">
+        <span class="mm-lcd__value" id="mm-value">&nbsp;</span>
+        <span class="mm-lcd__unit" id="mm-unit"></span>
+        <span class="mm-lcd__beep" id="mm-beep" hidden>·)))</span>
+      </div>
+
+      <fieldset class="mm-dial">
+        <legend>다이얼</legend>
+        <div class="mm-dial__group" id="mm-dial"></div>
+      </fieldset>
+
+      <fieldset class="mm-jacks">
+        <legend>빨간 리드 단자 <span class="mm-hint">(검정은 COM 고정)</span></legend>
+        <label><input type="radio" name="mm-jack" value="vma" checked> VΩmA</label>
+        <label><input type="radio" name="mm-jack" value="10a"> 10A</label>
+      </fieldset>
+
+      <label class="mm-swap"><input type="checkbox" id="mm-swap"> 빨강·검정 리드 반대로 대기</label>
+    </div>
+
+    <div class="mm-targets">
+      <fieldset>
+        <legend>측정 대상</legend>
+        <div class="mm-targets__list" id="mm-targets"></div>
+      </fieldset>
+      <div class="mm-feedback" id="mm-feedback" data-tone="info" aria-live="polite">
+        <p>다이얼이 <strong>OFF</strong>.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mm-note">표시값은 2000카운트 수동 범위 멀티미터 기준의 예시다. 실제 값은 건전지 잔량, 부품 오차에 따라 다르다.</p>
+</section>
+
+<section aria-labelledby="mm-how">
+  <h2 id="mm-how">상황별 측정 방법</h2>
+
+  <h3 id="mm-how-dcv">1. 건전지 전압 (직류 전압)</h3>
+  <ol class="mm-steps">
+    <li>검정은 COM, 빨강은 VΩmA.</li>
+    <li>다이얼 <code>V⎓</code>. 수동 범위면 1.5V 건전지는 <code>2</code> 또는 <code>20</code>.</li>
+    <li>빨강을 <strong>+</strong>극, 검정을 <strong>−</strong>극에 댄다.</li>
+    <li>새 알칼라인 AA는 보통 1.5~1.6V. 앞에 <code>−</code>가 붙으면 리드 방향이 반대인 것이고 값의 크기는 맞다.</li>
+  </ol>
+  <p>
+    아무것도 연결하지 않은 상태에서 잰 전압(무부하 전압)은 다 쓴 건전지도 꽤 높게 나올 수 있다.
+    전기가 흐르지 않으면 내부 저항에 의한 전압 강하가 없기 때문이다.
+    잔량을 정확히 보려면 기기에 넣고 켠 상태에서 건전지 양 끝을 잰다.
+  </p>
+
+  <h3 id="mm-how-circuit">2. 회로 속 전압</h3>
+  <p>
+    회로가 동작 중일 때 검정을 회로의 GND(건전지 −극)에 고정하고 빨강으로 여러 지점을 찍어 가며 잰다.
+    검정을 악어 클립으로 물려 두면 한 손으로 찍을 수 있다. 위 LED 회로라면 다음과 같다.
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">빨강 위치</th><th scope="col">검정 위치</th><th scope="col">값(예)</th><th scope="col">의미</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">건전지 +</th><td>건전지 −</td><td>3.1V</td><td>전원 전압</td></tr>
+        <tr><th scope="row">저항 한쪽 끝</th><td>저항 다른 쪽 끝</td><td>1.2V</td><td>저항에 걸린 전압</td></tr>
+        <tr><th scope="row">LED +(긴 다리)</th><td>LED −(짧은 다리)</td><td>1.9V</td><td>LED 순방향 전압</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    저항 전압 + LED 전압 = 1.2 + 1.9 = 3.1V로 전원 전압과 같다. 직렬로 이어진 부품들의 전압을 더하면 전원 전압이 된다(키르히호프 전압 법칙).
+    합이 맞지 않으면 그 사이 어딘가에 접촉 불량이나 숨은 저항이 있다는 뜻이다.
+  </p>
+
+  <h3 id="mm-how-ohm">3. 저항</h3>
+  <ol class="mm-steps">
+    <li><strong>전원을 끄고</strong>, 가능하면 부품을 회로에서 뺀다. 회로에 붙은 채로 재면 다른 부품을 거치는 경로까지 함께 재져서 실제보다 작게 나온다.</li>
+    <li>다이얼 <code>Ω</code>. 저항은 방향이 없어서 리드를 어느 쪽에 대도 같다.</li>
+    <li>두 리드 끝과 부품 다리를 양손으로 함께 잡지 않는다. 몸의 저항(수십 kΩ~수 MΩ)이 병렬로 들어가 큰 저항값이 낮게 나온다.</li>
+    <li>리드끼리 맞대면 리드 자체의 저항(보통 0.1~0.5Ω)이 나온다. 수 Ω 이하를 잴 때는 이 값을 빼거나 <code>REL</code> 버튼으로 0을 잡는다.</li>
+    <li>큰 저항(MΩ 단위)은 값이 안정될 때까지 몇 초 걸린다.</li>
+  </ol>
+
+  <details>
+    <summary>저항 색띠 읽기</summary>
+    <p>4색띠 저항은 첫째·둘째 띠가 숫자, 셋째 띠가 곱할 수(0의 개수), 넷째 띠가 오차다. 오차 띠(금·은색)가 오른쪽에 오도록 놓고 왼쪽부터 읽는다.</p>
+    <div class="table-wrapper">
+      <table class="mm-colors">
+        <thead>
+          <tr><th scope="col">색</th><th scope="col">숫자</th><th scope="col">곱</th><th scope="col">오차</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#111"></span>검정</th><td>0</td><td>×1</td><td></td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#7a4a1e"></span>갈색</th><td>1</td><td>×10</td><td>±1%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#d42a20"></span>빨강</th><td>2</td><td>×100</td><td>±2%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#f08a1c"></span>주황</th><td>3</td><td>×1k</td><td></td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#f3d21b"></span>노랑</th><td>4</td><td>×10k</td><td></td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#2e9a3e"></span>초록</th><td>5</td><td>×100k</td><td>±0.5%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#2160c4"></span>파랑</th><td>6</td><td>×1M</td><td>±0.25%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#7d3bb8"></span>보라</th><td>7</td><td>×10M</td><td>±0.1%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#8a8a8a"></span>회색</th><td>8</td><td></td><td></td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#fff"></span>흰색</th><td>9</td><td></td><td></td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#c9a227"></span>금색</th><td></td><td>×0.1</td><td>±5%</td></tr>
+          <tr><th scope="row"><span class="mm-swatch" style="--c:#c0c0c0"></span>은색</th><td></td><td>×0.01</td><td>±10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>예: 빨강·빨강·갈색·금색 = 2, 2, ×10, ±5% → <strong>220Ω ±5%</strong>. 멀티미터로 209~231Ω 사이면 정상이다.
+      5색띠 저항은 숫자 띠가 세 개(예: 빨강·빨강·검정·검정·갈색 = 220Ω ±1%).
+      색이 헷갈리면 멀티미터로 재는 게 가장 확실하다.</p>
+  </details>
+
+  <h3 id="mm-how-cont">4. 통전 확인</h3>
+  <p>
+    다이얼 <code>·)))</code>, 전선 양 끝에 리드를 댄다. 이어져 있으면 부저가 울리고,
+    끊겨 있으면 소리 없이 <code>1</code> 또는 <code>OL</code>. 저항 측정의 일종이므로 <strong>전원을 끄고</strong> 한다.
+  </p>
+  <ul>
+    <li><strong>케이블 단선</strong>: 양 끝의 같은 핀끼리 울리는지 본다. 케이블을 구부리면서 소리가 끊기면 내부가 끊어지기 직전이다.</li>
+    <li><strong>납땜 확인</strong>: 납땜한 두 점 사이가 울리는지, 붙으면 안 되는 옆 핀과는 울리지 않는지(브리지) 본다.</li>
+    <li><strong>스위치</strong>: 눌렀을 때만 울리면 정상.</li>
+    <li><strong>퓨즈</strong>: 기기에서 뺀 퓨즈 양 끝이 울리면 정상, 안 울리면 끊어진 것.</li>
+  </ul>
+  <p>부저는 보통 수십 Ω 이하에서 울린다. 저항이 작은 코일이나 부품도 울릴 수 있으므로 "울림 = 전선처럼 이어짐"으로만 해석하지 않는다.</p>
+
+  <h3 id="mm-how-diode">5. 다이오드와 LED</h3>
+  <p>
+    다이얼 <code>▷|</code>. 다이오드는 한 방향으로만 전류를 흘린다. 다이오드 모드는 약 1mA를 흘리고 그때 걸리는 전압(순방향 전압)을 표시한다.
+  </p>
+  <ol class="mm-steps">
+    <li>빨강을 다이오드의 +(애노드), 검정을 −(캐소드, 띠가 있는 쪽)에 댄다. 순방향 전압이 표시된다.</li>
+    <li>리드를 반대로 대면 <code>1</code>(OL)이 나와야 정상이다.</li>
+    <li>양쪽 다 0 근처면 내부가 붙은(단락) 고장, 양쪽 다 OL이면 끊어진 고장이다.</li>
+  </ol>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">부품</th><th scope="col">순방향 전압(대략)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">실리콘 다이오드(1N4148, 1N4007 등)</th><td>0.5~0.7V</td></tr>
+        <tr><th scope="row">쇼트키 다이오드</th><td>0.15~0.45V</td></tr>
+        <tr><th scope="row">빨강·노랑 LED</th><td>1.8~2.2V</td></tr>
+        <tr><th scope="row">파랑·흰색 LED</th><td>2.6~3.3V</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>LED는 순방향으로 대면 희미하게 켜지기도 해서 극성과 색을 바로 확인할 수 있다. 파랑·흰색 LED는 멀티미터의 시험 전압이 모자라 OL로 나오는 제품도 있다. LED 다리는 긴 쪽이 +다.</p>
+
+  <h3 id="mm-how-amp">6. 전류</h3>
+  <ol class="mm-steps">
+    <li>예상 전류가 수백 mA 이하면 빨강을 VΩmA, 그보다 크거나 모르면 <strong>10A</strong>. 다이얼도 맞춘다.</li>
+    <li>회로 전원을 끄고, 회로의 한 곳을 <strong>끊는다</strong>. 예: 건전지 +극과 저항 사이의 선.</li>
+    <li>끊어진 두 끝에 빨강과 검정을 하나씩 연결해서, 전류가 <strong>멀티미터를 거쳐</strong> 흐르게 한다. 빨강은 전류가 들어오는 쪽(회로를 따라 +극에 가까운 쪽), 검정은 나가는 쪽. 반대로 대면 값 앞에 −가 붙는다.</li>
+    <li>전원을 켜고 값을 읽는다. 10A 단자는 표시된 시간 제한을 넘기지 않는다.</li>
+    <li>측정 후 <strong>빨간 리드를 VΩmA로 되돌린다.</strong> 그대로 두고 전압을 재면 단락된다.</li>
+  </ol>
+  <aside class="post-panel mm-panel--warn">
+    <h3>전류 모드로 전원 양 끝에 대면 안 되는 이유</h3>
+    <p>
+      전류 모드에서 멀티미터 내부는 저항이 거의 0인 통로다. 이 상태로 건전지 양 끝에 대면
+      +와 −를 바로 이은 것과 같아서 큰 전류가 흐른다(단락).
+      mA 단자는 내부 퓨즈가 끊어지고, 퓨즈가 없는 10A 단자는 리드가 뜨거워지거나 불꽃이 튈 수 있다.
+      10A 단자에 “10초 이내” 같은 측정 시간 제한이 적힌 것도 같은 이유다.
+    </p>
+  </aside>
+  <h4>회로를 끊지 않고 전류 구하기</h4>
+  <p>
+    값을 아는 저항이 회로에 직렬로 있으면 그 저항의 전압을 재서 계산할 수 있다.
+    위 회로에서 220Ω 양 끝이 1.2V라면 1.2 ÷ 220 ≈ 5.5mA. 회로를 끊을 필요가 없고 단락 위험도 없다.
+    전류 측정용으로 일부러 넣는 작은 저항(0.1Ω, 1Ω 등)을 션트 저항이라고 한다.
+  </p>
+
+  <h3 id="mm-how-acv">7. 콘센트 (교류 전압)</h3>
+  <p>
+    다이얼을 <code>V~</code>의 220V보다 큰 범위(예: <code>750</code>)에 두고 잰다. 한국 가정용 콘센트는 220V 안팎.
+    교류는 극성이 없어서 리드 방향은 상관없다.
+  </p>
+  <ul>
+    <li>저전압 측정에 익숙해진 뒤에 한다.</li>
+    <li>리드는 손잡이 보호대(핑거 가드) 뒤쪽만 잡는다.</li>
+    <li>본체와 리드의 등급 표기(<code>CAT II 300V</code> 이상)를 확인한다. 아래 <a href="#mm-safety">안전</a> 참고.</li>
+    <li>리드를 꽂은 채로 다이얼을 돌리지 않는다.</li>
+  </ul>
+  <p>
+    연결이 끊긴 전선을 <code>V~</code>로 재도 수십 V가 뜰 수 있다. 근처 전선에서 유도된 <strong>유령 전압</strong>이다.
+    멀티미터 입력 저항이 커서 아주 작은 유도 전류로도 전압이 나타나는 것이고, 실제로 전력을 공급할 수는 없다.
+    일부 제품은 이를 걸러 내는 저임피던스(LoZ) 모드가 있다.
+  </p>
+</section>
+
+<section aria-labelledby="mm-reference">
+  <h2 id="mm-reference">자주 쓰는 기준값</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">대상</th><th scope="col">완충·정상</th><th scope="col">참고</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">알칼라인 AA·AAA</th><td>1.5~1.6V</td><td>무부하 1.2V 이하면 대부분 기기에서 교체 시점</td></tr>
+        <tr><th scope="row">니켈수소(Ni-MH) 충전지</th><td>1.3~1.4V</td><td>평소 1.2V 안팎. 낮아 보여도 정상</td></tr>
+        <tr><th scope="row">9V 건전지</th><td>9~9.6V</td><td>7V 아래면 많이 소모됨</td></tr>
+        <tr><th scope="row">CR2032 코인 전지</th><td>3.0~3.3V</td><td>2.7V 아래면 교체 권장</td></tr>
+        <tr><th scope="row">리튬이온 셀(18650 등)</th><td>4.2V</td><td>공칭 3.6~3.7V, 약 3.0V가 방전 하한</td></tr>
+        <tr><th scope="row">USB 전원</th><td>5V</td><td>규격상 4.75~5.25V</td></tr>
+        <tr><th scope="row">자동차 배터리(12V 납축전지)</th><td>12.6~12.7V</td><td>시동 끈 상태 기준. 약 12.2V면 절반 정도. 시동 중엔 13.7~14.7V(충전 중)</td></tr>
+        <tr><th scope="row">아두이노 우노 핀 HIGH</th><td>약 5V</td><td>3.3V 보드(ESP32 등)는 약 3.3V</td></tr>
+        <tr><th scope="row">가정용 콘센트</th><td>220V AC</td><td>대략 ±6% 범위 안팎</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mm-note">건전지 수치는 대략적인 기준이다. 제조사와 부하 조건에 따라 다르다.</p>
+</section>
+
+<section aria-labelledby="mm-safety">
+  <h2 id="mm-safety">안전</h2>
+
+  <h3>측정 범주(CAT) 등급</h3>
+  <p>
+    멀티미터 본체와 리드에 <code>CAT III 600V</code>처럼 적힌 표기는 어떤 위치의 전기를 재도 되는지 나타낸다.
+    숫자가 클수록 전원에 가까운 곳, 즉 순간적인 과전압(서지)이 큰 곳이다. 리드와 본체 중 <strong>낮은 쪽 등급</strong>이 전체 등급이다.
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">등급</th><th scope="col">대상</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">CAT I</th><td>콘센트에 직접 연결되지 않은 전자회로, 건전지·어댑터 출력 쪽</td></tr>
+        <tr><th scope="row">CAT II</th><td>콘센트, 콘센트에 꽂는 가전제품</td></tr>
+        <tr><th scope="row">CAT III</th><td>분전반, 건물 내부 고정 배선, 공장 설비</td></tr>
+        <tr><th scope="row">CAT IV</th><td>건물 인입선, 계량기 등 전력선 쪽</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>등급 표기가 없거나 확인할 수 없는 저가형은 콘센트 측정에 쓰지 않는 편이 낫다.</p>
+
+  <h3>수칙</h3>
+  <ul>
+    <li>측정 전에 리드 피복이 갈라지거나 금속이 드러난 곳이 없는지 본다.</li>
+    <li>모르는 전압을 잴 때는 먼저 아는 전압(건전지 등)을 재서 멀티미터가 정상인지 확인한다.</li>
+    <li>리드를 회로에 댄 채로 다이얼을 돌리지 않는다.</li>
+    <li>젖은 손, 젖은 바닥에서 고전압을 재지 않는다.</li>
+    <li>큰 콘덴서(전원부, 인버터, 전자레인지 등)는 전원을 꺼도 충전된 전기가 남아 있다. 저항·통전을 재기 전에 <code>V⎓</code>로 0V인지 먼저 확인한다.</li>
+    <li>퓨즈는 같은 규격(정격 전류, 전압, 차단 용량)으로만 교체한다. 전선이나 더 큰 퓨즈로 대신하지 않는다.</li>
+    <li>사용 후 다이얼은 <code>OFF</code>, 빨간 리드는 <code>VΩmA</code>.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="mm-mistakes">
+  <h2 id="mm-mistakes">자주 하는 실수</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">증상</th><th scope="col">원인</th><th scope="col">해결</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">화면에 <code>1</code> 또는 <code>OL</code></th><td>범위 초과, 또는 끊어진 회로</td><td>범위를 올리거나 연결 확인</td></tr>
+        <tr><th scope="row">값 앞에 <code>−</code></th><td>리드 방향 반대</td><td>빨강을 +쪽으로(값 자체는 맞음)</td></tr>
+        <tr><th scope="row">건전지인데 0 근처</th><td>다이얼이 <code>V~</code></td><td><code>V⎓</code>로 변경</td></tr>
+        <tr><th scope="row">값이 안 바뀜</th><td><code>HOLD</code>가 켜져 있음</td><td>HOLD 해제</td></tr>
+        <tr><th scope="row">전류가 계속 0</th><td>mA 퓨즈 단선, 또는 빨강이 다른 단자</td><td>단자 확인, 퓨즈 점검(설명서 규격대로 교체)</td></tr>
+        <tr><th scope="row">회로에 붙은 저항이 표기보다 작게 나옴</th><td>다른 부품이 병렬로 연결됨</td><td>한쪽 다리를 떼고 다시 측정</td></tr>
+        <tr><th scope="row">큰 저항이 표기보다 작게 나옴</th><td>손으로 양쪽 리드와 부품을 잡음</td><td>한 손만 대거나 부품을 바닥에 놓고 측정</td></tr>
+        <tr><th scope="row">숫자가 계속 흔들림</th><td>리드가 떠 있거나 접촉 불량</td><td>리드를 단단히 댄다. 아무 데도 안 댄 상태의 흔들림은 정상</td></tr>
+        <tr><th scope="row">끊긴 전선에서 <code>V~</code> 수십 V</th><td>유령 전압</td><td>실제 전원 여부는 부하를 연결하거나 LoZ 모드로 확인</td></tr>
+        <tr><th scope="row">화면이 흐리거나 값이 이상함</th><td>멀티미터 내부 배터리 부족</td><td>배터리 교체</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="mm-buy">
+  <h2 id="mm-buy">멀티미터 고를 때</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th scope="col">항목</th><th scope="col">볼 것</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">범위 방식</th><td>처음이면 오토 레인지가 편하다. 수동 범위는 저렴하고 범위 개념을 익히기 좋다.</td></tr>
+        <tr><th scope="row">카운트</th><td>2000카운트면 기본 측정에 충분. 4000~6000카운트면 5V, 3.3V를 한 자리 더 읽는다.</td></tr>
+        <tr><th scope="row">통전 부저</th><td>반응이 빠른지. 느리면 납땜 점검 때 답답하다.</td></tr>
+        <tr><th scope="row">CAT 등급</th><td>콘센트를 잴 계획이면 CAT II 300V 이상, 분전반이면 CAT III.</td></tr>
+        <tr><th scope="row">퓨즈</th><td>mA와 10A 단자 모두 퓨즈가 있는지. 저가형은 10A에 퓨즈가 없는 경우가 많다.</td></tr>
+        <tr><th scope="row">True RMS</th><td>일반 제품은 사인파 교류만 정확하다. 인버터·조광기처럼 파형이 찌그러진 교류를 잴 일이 있으면 True RMS 제품.</td></tr>
+        <tr><th scope="row">부가 기능</th><td>정전 용량, 주파수, 온도 측정, 백라이트, 자동 꺼짐.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="mm-quiz" aria-labelledby="mm-quiz-heading">
+  <h2 id="mm-quiz-heading">확인 문제</h2>
+  <div id="mm-quiz"></div>
+</section>
+
+<section aria-labelledby="mm-summary">
+  <h2 id="mm-summary">정리</h2>
+  <aside class="post-panel">
+    <ul>
+      <li>검정은 <code>COM</code>, 빨강은 대부분 <code>VΩmA</code>.</li>
+      <li><strong>전압</strong>은 양 끝에 나란히, <strong>전류</strong>는 회로를 끊고 사이에, <strong>저항·통전·다이오드</strong>는 전원을 끄고.</li>
+      <li>값을 모르면 큰 범위부터. <code>1</code>, <code>OL</code>은 범위 초과.</li>
+      <li>단위 표시(m, k, M)를 값과 같이 읽는다.</li>
+      <li>전류 측정 후 빨간 리드는 원래 단자로, 사용 후 다이얼은 <code>OFF</code>.</li>
+    </ul>
+  </aside>
+</section>
